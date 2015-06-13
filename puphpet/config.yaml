@@ -152,7 +152,7 @@ apache:
             servername: songbird.dev
             serveraliases:
                 - www.songbird.dev
-            docroot: /var/www/songbird
+            docroot: /var/www/songbird/web
             port: '443'
             setenv:
                 - 'APP_ENV dev'
@@ -166,7 +166,7 @@ apache:
             ssl_cipher: ''
             directories:
                 avd_sk7klbpbuzqd:
-                    path: /var/www/songbird
+                    path: /var/www/songbird/web
                     options:
                         - Indexes
                         - FollowSymlinks
@@ -196,6 +196,7 @@ php:
             - geoip
             - mbstring
             - mysql
+            - curl
         pear: {  }
         pecl:
             - pecl_http
