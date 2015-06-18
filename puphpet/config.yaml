@@ -153,7 +153,7 @@ apache:
             serveraliases:
                 - www.songbird.dev
             docroot: /var/www/songbird/web
-            port: '443'
+            port: '80'
             setenv:
                 - 'APP_ENV dev'
             custom_fragment: ''
