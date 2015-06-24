@@ -298,7 +298,7 @@ mysql:
             sql: ''
     grants:
         mysqlng_d5khu0c5fcdx:
-            user: ''
+            user: 'songbird'
             table: '*.*'
             privileges:
                 - ALL
