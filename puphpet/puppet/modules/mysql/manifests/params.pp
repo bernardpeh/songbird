@@ -308,7 +308,6 @@ class mysql::params {
     },
     'mysqld'                  => {
       'basedir'               => $mysql::params::basedir,
-      'bind-address'          => '127.0.0.1',
       'datadir'               => $mysql::params::datadir,
       'expire_logs_days'      => '10',
       'key_buffer_size'       => '16M',

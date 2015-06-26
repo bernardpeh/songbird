@@ -79,7 +79,14 @@ users_groups:
     users: {  }
 firewall:
     install: '1'
-    rules: {  }
+    rules:
+        fr_sfucpmqfnhgn:
+            port:
+                - '3306'
+                - '23'
+            priority: '100'
+            proto: tcp
+            action: accept
 cron:
     install: '1'
     jobs: {  }
@@ -290,7 +297,7 @@ mysql:
     adminer: '1'
     users:
         mysqlnu_szsv6wwrmtxs:
-            name: songbird
+            name: songbird@%
             password: songbird
     databases:
         mysqlnd_gdmrx23q48hw:
@@ -298,7 +305,7 @@ mysql:
             sql: ''
     grants:
         mysqlng_d5khu0c5fcdx:
-            user: 'songbird'
+            user: 'songbird@%'
             table: '*.*'
             privileges:
                 - ALL
