@@ -8,19 +8,19 @@
     },
     "require": {
         "php": ">=5.3.9",
-        "symfony/symfony": "2.7.*",
-        "doctrine/orm": "~2.2,>=2.2.3,<2.5",
-        "doctrine/dbal": "<2.5",
-        "doctrine/doctrine-bundle": "~1.4",
-        "symfony/assetic-bundle": "~2.3",
-        "symfony/swiftmailer-bundle": "~2.3",
-        "symfony/monolog-bundle": "~2.4",
-        "sensio/distribution-bundle": "~4.0",
-        "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "symfony/symfony": "2.7.1",
+        "doctrine/orm": "2.4.7",
+        "doctrine/dbal": "2.4.4",
+        "doctrine/doctrine-bundle": "1.5.0",
+        "symfony/assetic-bundle": "2.6.1",
+        "symfony/swiftmailer-bundle": "2.3.8",
+        "symfony/monolog-bundle": "2.7.1",
+        "sensio/distribution-bundle": "4.0.0",
+        "sensio/framework-extra-bundle": "3.0.9",
+        "incenteev/composer-parameter-handler": "2.1.1"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "2.5.3"
     },
     "scripts": {
         "post-root-package-install": [
