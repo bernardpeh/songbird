@@ -207,6 +207,7 @@ php:
         pear: {  }
         pecl:
             - pecl_http
+            - APC
     ini:
         display_errors: On
         error_reporting: '-1'
@@ -225,19 +226,19 @@ php:
     composer: '1'
     composer_home: ''
 xdebug:
-    install: '1'
+    install: '0'
     settings:
-        xdebug.default_enable: '1'
+        xdebug.default_enable: '0'
         xdebug.remote_autostart: '0'
         xdebug.remote_connect_back: '1'
         xdebug.remote_enable: '1'
         xdebug.remote_handler: dbgp
         xdebug.remote_port: '9000'
 blackfire:
-    install: '0'
+    install: '1'
     settings:
-        server_id: ''
-        server_token: ''
+        server_id: 
+        server_token: 
         agent:
             http_proxy: ''
             https_proxy: ''
@@ -322,7 +323,7 @@ postgresql:
     grants: {  }
     adminer: 0
 mongodb:
-    install: '1'
+    install: '0'
     settings:
         auth: 1
         bind_ip: 127.0.0.1

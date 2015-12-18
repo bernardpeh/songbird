@@ -70,4 +70,12 @@ class blackfire::php::config inherits blackfire::php {
     value   => $::blackfire::php::params['log_file']
   }
 
+   ini_setting { 'extension':
+    ensure  => present,
+    path    => $ini_path,
+    section => $section,
+    setting => 'extension',
+    value   => 'blackfire.so'
+  }
+
 }
