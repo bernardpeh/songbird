@@ -14,8 +14,33 @@ I created this project to:
 
 * Have fun! 
 
-To see the end product, checkout the chapter_20 branch.
- 
+
 ## Installation
 
-refer to the [installation chapter](http://practicalsymfony.com/chapter-3-creating-the-dev-environment/)
+Refer to the [installation chapter](http://practicalsymfony.com/chapter-3-creating-the-dev-environment/)
+
+To skip through everything and see the final product, run
+
+```
+# clone the repo
+git clone git@github.com:bernardpeh/songbird.git
+cd songbird
+# setup vagrant. Have a coffee break.
+vagrant up
+cd www/songbird
+composer update
+bower update
+gulp
+# install fixtures
+./scripts/resetapp
+./scripts/assetsinstall
+```
+
+Depending on your OS, add the vm IP to your host file
+
+```
+songbird.dev 192.168.56.111
+```
+
+Now visit songbird.dev and you should see the website.
+
