@@ -143,7 +143,6 @@ class composer(
       require   => $download_require,
       creates   => "${tmp_path}/composer.phar",
       logoutput => $logoutput,
-      environment => ["COMPOSER_HOME=\"/home/vagrant/.composer\""],
     }
     # move file to target_dir
     file { "${target_dir}/${composer_file}":

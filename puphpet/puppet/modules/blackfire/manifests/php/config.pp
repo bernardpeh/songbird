@@ -5,7 +5,7 @@ class blackfire::php::config inherits blackfire::php {
     'debian': {
       if (
         ($::operatingsystem == 'Ubuntu' and $::operatingsystemrelease < '14.04')
-        or ($::operatingsystem == 'Debian' and $::operatingsystemmajrelease < 7)
+        or ($::operatingsystem == 'Debian' and $::operatingsystemmajrelease < '7')
       ) {
         $ini_path = '/etc/php5/conf.d/blackfire.ini'
       } else {
@@ -68,14 +68,6 @@ class blackfire::php::config inherits blackfire::php {
     section => $section,
     setting => 'blackfire.log_file',
     value   => $::blackfire::php::params['log_file']
-  }
-
-   ini_setting { 'extension':
-    ensure  => present,
-    path    => $ini_path,
-    section => $section,
-    setting => 'extension',
-    value   => 'blackfire.so'
   }
 
 }
