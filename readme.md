@@ -1,8 +1,10 @@
-# SongBirdch  (Updated to Symfony 2.8 LTS)
+# SongBird 
 
 ![songbird cms](images/chapter_20_screenshot.png)
 
-This is an online book and repository documenting the creation of SongBird, a simple CMS created using Symfony. The process of building this CMS is documented in this repo.
+***Updated to Symfony 2.8 LTS***
+
+This is an online book and repository documenting the creation of SongBird, a simple CMS created using Symfony.
 
 I created this project to:
 
@@ -183,6 +185,8 @@ This is just a teaser. Don't worry if this command doesn't work as you might not
 ```
 http://127.0.0.1:8000
 ```
+
+and you should see something like this:
 
 ![installation teaser](images/installation_teaser.png)
 
