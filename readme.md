@@ -14,6 +14,12 @@ I created this project to:
 
 * Have fun! 
 
+## Suggestions and Improvements
+
+Feel free to create pull request if you spot any typos or problems with the code. The better this project can help the community, the better it is.
+
+## License
+
 Book License: [CC BY-SA 3.0 License](http://creativecommons.org/licenses/by-sa/3.0/)
 
 Code License: [MIT](https://opensource.org/licenses/MIT)
