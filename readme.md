@@ -38,6 +38,12 @@ Learning a new framework has never been an easy task. Many people follow tutoria
 
 This book aims to lower the learning curve by providing a step by step hands-on approach to guide developers who are new to Symfony to build a simple CMS (Let us call it "SongBird") using good industry practice. Hopefully after following all the chapters, your eyes will be opened to RAD and the unlimited possibilities with Symfony. 
 
+## About Me
+
+I am currently the Lead Developer at a digital agency in Melbourne, Australia. I am a thinker, innovator, coder, open source enthusiast and raspberry pi lover. Over the years, I have lead and/or developed software for Telstra, BP, Defence Force, BUPA, ANZ bank and many big brands using various frameworks including Symfony. Symfony has a special place in my heart due to the beauty of its architecture and stability. 
+
+I am passionate about technologies and innovation... and is not a typical coder who sits in front of the computer 24/7. I love experimenting, sharing and talking to people and keeping myself busy.
+
 ## Audience
 
 This book is targeted at developers who are new to Symfony. If you are already an seasoned PHP Developer, I hope you would pick up some hints here and there.
@@ -172,23 +178,7 @@ rm -rf vendor
 composer update
 ```
 
-## Exercise
-
-This master branch already contains a fresh symfony installation. You can test it out yourself by starting the built in webserver
-
-```
-app/console server:run
-```
-
-This is just a teaser. Don't worry if this command doesn't work as you might not have setup PHP correctly in your system. Feel free to dig your way through and get it to work. If not, I will be running through the setup later. If everything is working correctly, you can verify that by visiting the url:
-
-```
-http://127.0.0.1:8000
-```
-
-and you should see something like this:
-
-![installation teaser](images/installation_teaser.png)
+Next Chapter: [Chapter 1: Survival Skills](https://github.com/bernardpeh/songbird/tree/chapter_1)
 
 ## References
 
