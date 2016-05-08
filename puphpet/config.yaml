@@ -39,7 +39,7 @@ vagrantfile:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
         synced_folder:
             vflsf_r8sf8apnhqsl:
-                source: ./
+                source: ./www
                 target: /var/www
                 sync_type: nfs
                 smb:
@@ -221,6 +221,43 @@ apache:
                             custom_fragment: ''
                             provider: filesmatch
                     provider: directory
+        av_2tnqjgcjywww:
+                    servername: songbird.dev
+                    serveraliases:
+                        - www.songbird.dev
+                    docroot: /var/www/songbird/web
+                    port: '80'
+                    setenv:
+                        - 'APP_ENV dev'
+                    setenvif:
+                        - 'Authorization "(.*)" HTTP_AUTHORIZATION=$1'
+                    custom_fragment: ''
+                    ssl: '0'
+                    ssl_cert: ''
+                    ssl_key: ''
+                    ssl_chain: ''
+                    ssl_certs_dir: ''
+                    ssl_protocol: ''
+                    ssl_cipher: ''
+                    directories:
+                        avd_ethtnq7ym9uw:
+                            path: /var/www/songbird/web
+                            options:
+                                - Indexes
+                                - FollowSymlinks
+                                - MultiViews
+                            allow_override:
+                                - All
+                            require:
+                                - 'all granted'
+                            custom_fragment: ''
+                            files_match:
+                                avdfm_9sdxllm433x8:
+                                    path: \.php$
+                                    sethandler: 'proxy:fcgi://127.0.0.1:9000'
+                                    custom_fragment: ''
+                                    provider: filesmatch
+                            provider: directory
 undefined: null
 letsencrypt:
     install: '1'
