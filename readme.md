@@ -184,3 +184,15 @@ Next Chapter: [Chapter 1: Survival Skills](https://github.com/bernardpeh/songbir
 
 * [RAD](https://en.wikipedia.org/wiki/Rapid_application_development)
 * [Agile Software Development](https://en.wikipedia.org/wiki/Agile_software_development)
+
+## Donation
+
+Donation welcomed.
+
+Bitcoin: 
+12fUDgzwji44GgoTxyrLWgGvHvzecv3JSL
+
+or
+
+Ether: 
+0xcb975754208e8229aab467b36a97c0e9bdf491c7
