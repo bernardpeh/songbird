@@ -189,10 +189,6 @@ Next Chapter: [Chapter 1: Survival Skills](https://github.com/bernardpeh/songbir
 
 Donation welcomed.
 
-Bitcoin: 
-12fUDgzwji44GgoTxyrLWgGvHvzecv3JSL
+Bitcoin: 12fUDgzwji44GgoTxyrLWgGvHvzecv3JSL
 
-or
-
-Ether: 
-0xcb975754208e8229aab467b36a97c0e9bdf491c7
+Ether: 0xcb975754208e8229aab467b36a97c0e9bdf491c7
