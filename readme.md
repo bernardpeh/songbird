@@ -1,6 +1,6 @@
 # SongBird 
 
-** This book is still work in progress... Any comments welcomed. **
+**This book is still work in progress... Any comments welcomed.**
 
 ![songbird cms](images/chapter_20_screenshot.png)
 
