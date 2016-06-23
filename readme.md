@@ -28,7 +28,7 @@ Code License: [MIT](https://opensource.org/licenses/MIT)
 
 ## Introduction
 
-![Pyramid](images/pyramid.png)
+![Pyramid](images/pyramid.jpg)
 
 Building an application is like building a Pyramid. You create each piece of functionality bit by bit. You test the functionality and make sure its stable before building the next piece. This cycle continues until you reach the peak - completion.
 
