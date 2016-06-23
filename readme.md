@@ -1,5 +1,7 @@
 # SongBird 
 
+** This book is still work in progress... Any comments welcomed. **
+
 ![songbird cms](images/chapter_20_screenshot.png)
 
 ***Updated to Symfony 2.8 LTS***
