@@ -1,6 +1,6 @@
 # SongBird 
 
-**This book is still work in progress... Any comments welcomed.**
+**This book is still work in progress... The cms is completed but I am polishing the content and workflow. If you want to see the final product, simply checkout chapter_20. Any comments welcomed.**
 
 ![songbird cms](images/chapter_20_screenshot.png)
 
@@ -68,7 +68,7 @@ You can also think of SongBird as a foundation to learn [cmf project](http://cmf
 
 ## Conventions Used in This Book
 
-**Each git branch is a chapter**. Obviously, chapter_6 branch means it is Chapter 6. Otherwise stated, all path references assumes **~/songbird/www/songbird/** as the root folder. Always execute commands from the root foler.
+**Each git branch is a chapter**. Obviously, chapter_6 branch means it is Chapter 6. Otherwise stated, all path references assumes **~/songbird/symfony/** as the root folder. Always execute commands from the root foler.
 
 To executing commands, You will see a "->" before the command. For example
 
@@ -91,7 +91,7 @@ Untracked files:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-This means that in the command line terminal, go to the ~/songbird/www/songbird/ folder and type in "git status". 
+This means that in the command line terminal, go to the ~/songbird/symfony/ folder and type in "git status".
 
 Likewise, a code snippet like this
 
@@ -104,9 +104,9 @@ Songbird_user:
     prefix:   /
 ```
 
-means update or insert this snippet in ~/songbird/www/songbird/app/config/routing.yml
+means update or insert this snippet in ~/songbird/symfony/app/config/routing.yml
 
-or it could mean a comment for you to action like so
+or it could mean a comment for you to action like
 
 ```
 # you should commit your changes now.
@@ -169,7 +169,7 @@ rm -rf app/cache/dev
 
 ## Regenerating Bootstrap Cache
 
-If you are getting errors on /var/www/songbird/app/bootstrap.php.cache, you can regenerate it.
+If you are getting errors on bootstrap.php.cache, you can regenerate it easily.
 
 ```
 -> ./vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php
