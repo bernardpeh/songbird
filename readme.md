@@ -2,6 +2,8 @@
 
 **This book is still work in progress... The cms is completed but I am polishing the content and workflow. If you want to see the final product, simply checkout chapter_20. Any comments welcomed.**
 
+* 5 july - chapter 4 completed. use chrome browser instead of firefox. Updated to Symfony 2.8.8.
+
 ![songbird cms](images/chapter_20_screenshot.png)
 
 ***Updated to Symfony 2.8 LTS***
