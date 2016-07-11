@@ -4,9 +4,11 @@
 
 * 5 july - chapter 4 completed. use chrome browser instead of firefox. Updated to Symfony 2.8.8.
 
+* 11 July - Updating all chapters to use Symfony 3.1 instead. Chapter 6 completed. 
+
 ![songbird cms](images/chapter_20_screenshot.png)
 
-***Updated to Symfony 2.8 LTS***
+***Updating to Symfony 3.1***
 
 This is an online book and repository documenting the creation of SongBird, a simple CMS created using Symfony.
 
