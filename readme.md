@@ -66,7 +66,7 @@ We are not building a new CMS and SongBird is not trying to compete in the CMS s
 
 ## Is SongBird Reusable?
 
-Definitely. SongBird is not just a tutorial project, it can be used as a vanilla framework to kickstart projects  because all common features have been build and configured already. Since you built the software yourself, you have full knowledge of how the software work and know where to customise should the need arises. 
+Definitely. SongBird is not just a tutorial project, I use it often as a vanilla framework to kickstart projects. Its a hugh time saver because all common features have been build and configured already. Since I built the software, I have full knowledge of how the software works and know where to customise things should the need arises. 
 
 You can also think of SongBird as a foundation to learn [cmf project](http://cmf.symfony.com/). Once you are comfortable with the basic concepts of building a CMS, you are ready for more complex projects.
 
