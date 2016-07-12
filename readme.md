@@ -1,14 +1,8 @@
 # SongBird 
 
-**This book is still work in progress... The cms is completed but I am polishing the content and workflow. If you want to see the final product, simply checkout chapter_20. Any comments welcomed.**
-
-* 5 july - chapter 4 completed. use chrome browser instead of firefox. Updated to Symfony 2.8.8.
-
-* 11 July - Updating all chapters to use Symfony 3.1 instead. Chapter 6 completed. 
+**This book is still work in progress to update to Symfony 3.1... The cms is completed but I am polishing the content and workflow. If you want to see the final product, simply checkout chapter_20. See [changelog](CHANGELOG.md) for updates. Any comments welcomed.**
 
 ![songbird cms](images/chapter_20_screenshot.png)
-
-***Updating to Symfony 3.1***
 
 This is an online book and repository documenting the creation of SongBird, a simple CMS created using Symfony.
 
