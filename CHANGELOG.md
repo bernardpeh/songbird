@@ -1,5 +1,7 @@
 # CHANGELOG
 
+* 19 July 2016 - Chapter 10 completed. Make codeception/testing framework chapters optional.
+
 * 12 July 2016 - Chapter 7 completed. Created Changelog.
 
 * 11 July 2016 - Updating all chapters to use Symfony 3.1 instead. Chapter 6 completed. 

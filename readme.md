@@ -153,6 +153,8 @@ If you are already getting confused, here are some good [git resource](https://h
 
 I have organised the repository such that every chapter will have its own corresponding branch in the code. Feel free to jump between the different chapters and test out the code. However, remember to [stash](https://git-scm.com/book/en/v1/Git-Tools-Stashing) or commit your changes before switching to a new branch. Also remember to clear your cache if things are broken.
 
+Chapters that talk about [Codeception](http://codeception.com/) Testing Framework are optional. Feel free to skip them if you already have a testing framework in place.
+
 To clear the cache fully,
 
 ```
