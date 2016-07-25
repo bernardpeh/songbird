@@ -1,5 +1,7 @@
 # CHANGELOG
 
+* 25 July 2016 - Chapter 11 completed. Added mailcatcher for all chapters.
+
 * 19 July 2016 - Chapter 10 completed. Make codeception/testing framework chapters optional.
 
 * 12 July 2016 - Chapter 7 completed. Created Changelog.
