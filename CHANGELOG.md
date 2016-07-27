@@ -1,14 +1,16 @@
 # CHANGELOG
 
+* 27 July 2016 - Chapter 12 completed. Added new section on using native sonata text block. updated bdd test.
+
 * 25 July 2016 - Chapter 11 completed. Added mailcatcher for all chapters.
 
 * 19 July 2016 - Chapter 10 completed. Make codeception/testing framework chapters optional.
 
-* 12 July 2016 - Chapter 7 completed. Created Changelog.
+* 12 July 2016 - Chapter 7 to 9 completed. Created Changelog.
 
 * 11 July 2016 - Updating all chapters to use Symfony 3.1 instead. Chapter 6 completed. 
 
-* 5 july 2016 - chapter 4 completed. use chrome browser instead of firefox. Updated to Symfony 2.8.8.
+* 5 july 2016 - chapter 1 to 4 completed. use chrome browser instead of firefox. Updated to Symfony 2.8.8.
 
 * 4 Jun 2016 - Decided to close practicalsymfony.com. Migrating all content to github. Preparing for Symfony 3.0 upgrade. I might replace SonataAdmin with something else.
 
