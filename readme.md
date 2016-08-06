@@ -161,7 +161,7 @@ To clear the cache fully,
 app/console cache:clear --no-warmup
 ```
 
-Assuming we are in the dev environment, this command is equivalent to 
+You are by default in the dev environment, this command is equivalent to
 
 ```
 rm -rf app/cache/dev
@@ -172,7 +172,7 @@ rm -rf app/cache/dev
 If you are getting errors on bootstrap.php.cache, you can regenerate it easily.
 
 ```
--> ./vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php
+-> ./vendor/sensio/distribution-bundle/Resources/bin/build_bootstrap.php
 ```
 
 ## Reinstalling Symfony

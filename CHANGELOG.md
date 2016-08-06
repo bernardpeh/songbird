@@ -1,5 +1,7 @@
 # CHANGELOG
 
+* 6 Auguest 2016 - Review previous chapters. Mass update of readme. Using easyadmin instead of sonataadmin. Up to chapter 11 so far.
+
 * 27 July 2016 - Chapter 12 completed. Added new section on using native sonata text block. updated bdd test.
 
 * 25 July 2016 - Chapter 11 completed. Added mailcatcher for all chapters.
