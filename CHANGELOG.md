@@ -1,5 +1,7 @@
 # CHANGELOG
 
+* 8 Sep 2016 - Chapter 18 completed. It was an enormous effort.
+
 * 25 August 2016 - Chapter 16 completed.
 
 * 6 Auguest 2016 - Review previous chapters. Mass update of readme. Using easyadmin instead of sonataadmin. Up to chapter 11 so far.
