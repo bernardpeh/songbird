@@ -1,8 +1,60 @@
 # SongBird 
 
-**This book is still work in progress to update to Symfony 3.1... The cms is completed but I am polishing the content and workflow. If you want to see the final product, simply checkout chapter_20. See [changelog](CHANGELOG.md) for updates. Any comments welcomed.**
+**The cms is completed. Feel free to create pull request if you spot any typos or problems with the code. The better this project can help the community, the better it is.** 
 
-![songbird cms](images/chapter_20_screenshot.png)
+See [changelog](CHANGELOG.md) for updates.
+
+## Installing the Demo
+
+The demo runs in vagrant. If you are technical enough, have proper dev environment setup and want to see the final cms,
+
+```
+-> git clone git@github.com:your_username/songbird.git
+-> git checkout chapter_final
+-> cd songbird
+-> vagrant up
+-> cd symfony
+-> composer update
+
+# when prompted, leave default settings except for the followings:
+# database_host: 192.168.56.111
+# database_port: 3306
+# database_name: songbird
+# database_user: homestead
+# database_password: secret
+...
+# We are using smtp port 1025 to catch all mails.
+# mailer_host: 127.0.0.1:1025
+
+# add IP of your VM to your host file
+# eg. 192.168.56.111 songbird.app adminer.app
+
+# install db and fixtures
+-> scripts/resetapp
+
+# install js libraries
+-> bower update
+-> npm update
+
+# install assets
+-> gulp
+```
+
+Now go to http://songbird.app and you should see the homepage.
+
+![songbird cms](images/cms_final.png)
+
+You can log into the backend using admin:admin
+
+## License
+
+Book License: [CC BY-SA 3.0 License](http://creativecommons.org/licenses/by-sa/3.0/)
+
+Code License: [MIT](https://opensource.org/licenses/MIT)
+
+## Introduction
+
+![Pyramid](images/pyramid.jpg)
 
 This is an online book and repository documenting the creation of SongBird, a simple CMS created using Symfony.
 
@@ -15,20 +67,6 @@ I created this project to:
 * Kickstart more complex Symfony projects with this application.
 
 * Have fun! 
-
-## Suggestions and Improvements
-
-Feel free to create pull request if you spot any typos or problems with the code. The better this project can help the community, the better it is.
-
-## License
-
-Book License: [CC BY-SA 3.0 License](http://creativecommons.org/licenses/by-sa/3.0/)
-
-Code License: [MIT](https://opensource.org/licenses/MIT)
-
-## Introduction
-
-![Pyramid](images/pyramid.jpg)
 
 Building an application is like building a Pyramid. You create each piece of functionality bit by bit. You test the functionality and make sure its stable before building the next piece. This cycle continues until you reach the peak - completion.
 

@@ -1,5 +1,7 @@
 # CHANGELOG
 
+* 18 Sep 2016 - Final chapter completed.
+
 * 8 Sep 2016 - Chapter 18 completed. It was an enormous effort.
 
 * 25 August 2016 - Chapter 16 completed.
