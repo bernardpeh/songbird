@@ -1,6 +1,6 @@
 # SongBird 
 
-**The cms is completed. Feel free to create pull request if you spot any typos or problems with the code. The better this project can help the community, the better it is.** 
+**The cms is completed. My english is bad. No matter how many times I check my work, I could always spot typos or grammatical errors. Feel free to create pull request if you spot anything incorrect. The better this project can help the community, the better it is.** 
 
 See [changelog](CHANGELOG.md) for updates.
 
@@ -72,19 +72,19 @@ Building an application is like building a Pyramid. You create each piece of fun
 
 Choosing the best framework for RAD (Rapid Application Development) has been a topic that has been debated to death. Today, there is no longer such a thing as "The Best Framework" because all modern day frameworks follow the best practice. However, there is such a thing called "The Best Practice". In fact, you could see similar develoment methodologies being used across all frameworks. So knowing one framework well means you can jump between other frameworks easily. Just as human evolves, different frameworks learn from each other and adapt very fast to new and better ways of doing things.
 
-At the time of writing, NodeJS and Rails continue to innovate with PHP closing in fast behind. PHP is the old veteran when comes to web development with the most frameworks in the market. The 2 frameworks that stand out from the pack at the time of writing were Laravel and Symfony. If you are looking to learn a new framework, I highly recommend Symfony because it is one of the more stable modern framework out there. Symfony components have been used by many projects including Drupal and Laravel.
+At the time of writing, NodeJS and Rails continue to innovate with PHP closing in fast behind. PHP is the old veteran when comes to web development with the most frameworks in the market. The 2 frameworks that stood out from the pack at the time of writing were Laravel and Symfony. If you are looking to learn a new framework, I highly recommend Symfony because it is one of the more stable modern framework out there. Symfony components have been used by many projects including Drupal and Laravel.
 
-Symfony 2 is a mature framework. A mature framework means that information and libraries don’t get outdated quickly. Adapting too fast to technology is not a good thing because 3rd party libraries couldn’t catch up. Rails early days suffered from this. Nothing worked out of the box and googled information was often outdated. Unless you enjoy spending time troubleshooting system configurations and library dependencies, choose a stable framework that is well supported and documented. You should be spending your precious time learning the software instead.
+Symfony 2 is a mature framework. A mature framework means that information and libraries don’t get outdated quickly. Adapting quickly to technology can be both good and bad. Rails early days suffered from this. Nothing worked out of the box and googled information was often outdated as many 3rd party libraries were struggling to keep up. If you do not want to spend time troubleshooting system configurations and library dependencies, choose a stable framework that is well supported and documented. You should be spending your precious time learning the software instead.
 
-Learning a new framework has never been an easy task. Many people follow tutorials in google and read up all the documentation in [Symfony website](http://symfony.com) and still find it challenging to create a simple application. Why? Because there is just too much theory and not enough real world practical examples. Worst still, you can get entangled in technical jargons and advance customisations easily. The fact that Symfony is an extremely flexible framework makes it even harder to master because there are so many ways to achieve the same goal. If you are new to MVC (Model-View-Controller) and RAD, you will find that Symfony has a steep learning curve.
+Learning a new framework has never been an easy task. Many people follow tutorials in google and read up all the documentation in [Symfony website](http://symfony.com) and still find it challenging to create a simple application. Why? Because there is too much theory and not enough real world practical examples. Worst still, you can get entangled in technical jargons and advance customisations easily. The fact that Symfony is an extremely flexible framework makes it even harder to master because there are so many ways to achieve the same goal. If you are new to MVC (Model-View-Controller) and RAD, you will find that Symfony has a steep learning curve.
 
 This book aims to lower the learning curve by providing a step by step hands-on approach to guide developers who are new to Symfony to build a simple CMS (Let us call it "SongBird") using good industry practice. Hopefully after following all the chapters, your eyes will be opened to RAD and the unlimited possibilities with Symfony. 
 
 ## About Me
 
-I am currently the Lead Developer at a digital agency in Melbourne, Australia. I am a thinker, innovator, coder, open source enthusiast and raspberry pi lover. Over the years, I have lead and/or developed software for Telstra, BP, Defence Force, BUPA, ANZ bank and many big brands using various frameworks including Symfony. Symfony has a special place in my heart due to the beauty of its architecture and stability. 
+I am a thinker, innovator, coder, open source enthusiast and raspberry pi lover. I have used Symfony in many projects and really like the beauty of its architecture and stability. 
 
-I am passionate about technologies and innovation... and is not a typical coder who sits in front of the computer 24/7. I love experimenting, sharing and talking to people and keeping myself busy.
+I am passionate about technologies and innovation... but I dont sit in front of the computer 24/7. I love experimenting, sharing and talking to people and keeping myself busy.
 
 ## Audience
 
