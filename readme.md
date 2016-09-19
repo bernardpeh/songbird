@@ -14,4 +14,5 @@ If you find any typos or errors, feel free to create a pull request.
 
 ## Donation
 
-You can show support by purchasing the leanpub book.
+You can show support by purchasing the [leanpub book](https://leanpub.com/practicalsymfony3/).
+
