@@ -12,7 +12,7 @@ If you find any typos or errors, feel free to create a pull request.
 
 ## Donation
 
-It took me nearly 1.5 years to complete the book and it still has lots of room for improvement.
+I will strive to update the book as much as I can.
 
 You can show support by purchasing the [leanpub book](https://leanpub.com/practicalsymfony3/).
 

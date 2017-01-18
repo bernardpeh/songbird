@@ -1,5 +1,7 @@
 # CHANGELOG
 
+* 17 Jan 2017 - New revision started.
+
 * 19 Sep 2016 - All documentation moved over to leanpub.
 
 * 17 Sep 2016 - Final chapter completed.
