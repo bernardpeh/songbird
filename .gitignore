@@ -1,5 +1,6 @@
 /.vagrant/
 .idea/
-/puphpet/files/dot/ssh
+logs/
+.data/
 .DS_Store
-composer.lock
+.env
