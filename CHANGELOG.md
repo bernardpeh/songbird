@@ -1,6 +1,8 @@
 # CHANGELOG
 
-* 17 Jan 2017 - New revision started.
+* 20 Jan 2017 - Up to chapter 4. Use phantomjs in favor of selenium.
+
+* 17 Jan 2017 - New revision started. Proof read preface, intro and the first few chapters. Dropped vagrant in favour of docker.
 
 * 19 Sep 2016 - All documentation moved over to leanpub.
 
