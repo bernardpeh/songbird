@@ -2,7 +2,9 @@
 
 * 20 Jan 2017 - Up to chapter 4. Use phantomjs in favor of selenium.
 
-* 17 Jan 2017 - New revision started. Proof read preface, intro and the first few chapters. Dropped vagrant in favour of docker.
+* 18 Jan 2017 - Updated chapter 3. Dropped vagrant in favour of docker.
+
+* 17 Jan 2017 - New revision started with Symfony 3.2. Proof read preface, intro and the first few chapters.
 
 * 19 Sep 2016 - All documentation moved over to leanpub.
 
