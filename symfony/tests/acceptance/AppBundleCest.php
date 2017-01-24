@@ -11,10 +11,15 @@ class AppBundleCest
     {
     }
 
-    public function InstallationTest(AcceptanceTester $I)
+    /**
+     * check that homepage is not active
+     *
+     * @param AcceptanceTester $I
+     */
+    public function RemovalTest(AcceptanceTester $I)
     {
-        $I->wantTo('Check if Symfony is installed successfully.');
+        $I->wantTo('Check if / is not active.');
         $I->amOnPage('/');
-        $I->see('Welcome to');
+        $I->see('404 Not Found');
     }
 }
