@@ -9,6 +9,8 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
+     * not using the homepage route for now
+     *
      * Route("/", name="homepage")
      */
     public function indexAction(Request $request)
