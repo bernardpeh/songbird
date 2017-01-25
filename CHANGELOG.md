@@ -1,5 +1,7 @@
 # CHANGELOG
 
+* 25 Jan 2017 - Up to chapter 6. use docker-compose to access containers. No more adminer. Need bash wrapper to access containers.
+
 * 20 Jan 2017 - Up to chapter 4. Use phantomjs in favor of selenium.
 
 * 18 Jan 2017 - Updated chapter 3. Dropped vagrant in favour of docker.
