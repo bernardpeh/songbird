@@ -3,4 +3,4 @@
 logs/
 .data/
 .DS_Store
-.env
+/.env
