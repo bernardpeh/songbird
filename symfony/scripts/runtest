@@ -1,4 +1,4 @@
 #!/bin/bash
 
-bin/console cache:clear --no-warmup
+scripts/console cache:clear --no-warmup
 vendor/bin/codecept run acceptance
