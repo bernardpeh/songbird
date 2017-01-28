@@ -1,5 +1,7 @@
 # CHANGELOG
 
+* 28 Jan 2017 - At Chapter 8. Added DoctrineMigrationsBundle section.
+
 * 25 Jan 2017 - Up to chapter 6. use docker-compose to access containers. No more adminer. Need bash wrapper to access containers.
 
 * 20 Jan 2017 - Up to chapter 4. Use phantomjs in favor of selenium.
