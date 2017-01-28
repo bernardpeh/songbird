@@ -1,0 +1,5 @@
+easy_admin:
+    entities:
+        User:
+            class: AppBundle\Entity\User
+

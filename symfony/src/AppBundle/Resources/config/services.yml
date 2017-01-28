@@ -1,0 +1,2 @@
+services:
+    # note that this name is important. Its how we reference the class throughout the site.
