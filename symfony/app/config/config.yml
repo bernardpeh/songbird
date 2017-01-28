@@ -74,3 +74,10 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: AppBundle\Entity\User
+
+# doctrine migrations config
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/../src/AppBundle/DoctrineMigrations"
+    namespace: AppBundle\DoctrineMigrations
+    table_name: migration_versions
+    name: AppBundle Migrations
