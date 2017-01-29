@@ -2,4 +2,50 @@ easy_admin:
     entities:
         User:
             class: AppBundle\Entity\User
+            label: 'User Management'
+            # for new user
+            new:
+                fields:
+                  - username
+                  - firstname
+                  - lastname
+                  - { property: 'plainPassword', type: 'repeated', type_options: { type: 'Symfony\Component\Form\Extension\Core\Type\PasswordType', first_options: {label: 'Password'}, second_options: {label: 'Repeat Password'}, invalid_message: 'The password fields must match.'}}
+                  - { property: 'email', type: 'email', type_options: { trim: true } }
+                  - roles
+                  - enabled
+            edit:
+                  actions: ['-delete', '-list']
+                  fields:
+                    - username
+                    - firstname
+                    - lastname
+                    - { property: 'plainPassword', type: 'repeated', type_options: { type: 'Symfony\Component\Form\Extension\Core\Type\PasswordType', required: false, first_options: {label: 'Password'}, second_options: {label: 'Repeat Password'}, invalid_message: 'The password fields must match.'}}
+                    - { property: 'email', type: 'email', type_options: { trim: true } }
+                    - roles
+                    - enabled
+            show:
+                  actions: ['edit', '-delete', '-list']
+                  fields:
+                    - id
+                    - username
+                    - firstname
+                    - lastname
+                    - email
+                    - roles
+                    - enabled
+                    - { property: 'last_login', type: 'datetime' }
+                    - modified
+                    - created
+            list:
+                title: 'User Listing'
+                actions: ['show']
+                fields:
+                  - id
+                  - username
+                  - email
+                  - firstname
+                  - lastname
+                  - enabled
+                  - roles
+                  - { property: 'last_login', type: 'datetime' }
 
