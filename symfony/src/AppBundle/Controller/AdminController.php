@@ -11,7 +11,7 @@ class AdminController extends BaseAdminController
      */
     public function showUserAction()
     {
-
+        $this->dispatch(EasyAdminEvents::PRE_SHOW);
         $id = $this->request->query->get('id');
         $easyadmin = $this->request->attributes->get('easyadmin');
         $entity = $easyadmin['item'];
@@ -38,6 +38,7 @@ class AdminController extends BaseAdminController
      */
     protected function editUserAction()
     {
+        $this->dispatch(EasyAdminEvents::PRE_EDIT);
         $id = $this->request->query->get('id');
         $easyadmin = $this->request->attributes->get('easyadmin');
         $entity = $easyadmin['item'];
@@ -62,7 +63,6 @@ class AdminController extends BaseAdminController
             $editForm->remove('enabled');
             $editForm->remove('roles');
             $editForm->remove('locked');
-            $editForm->remove('expired');
         }
 
         $deleteForm = $this->createDeleteForm($this->entity['name'], $id);
