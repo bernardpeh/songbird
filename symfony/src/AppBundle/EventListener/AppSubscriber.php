@@ -45,7 +45,6 @@ class AppSubscriber implements EventSubscriberInterface
      */
     public function checkUserRights(GenericEvent $event)
     {
-
         // if super admin, allow all
         if ($this->container->get('security.authorization_checker')->isGranted('ROLE_SUPER_ADMIN')) {
             return;
