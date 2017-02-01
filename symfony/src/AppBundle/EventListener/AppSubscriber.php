@@ -7,6 +7,9 @@ use Symfony\Component\EventDispatcher\GenericEvent;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use JavierEguiluz\Bundle\EasyAdminBundle\Event\EasyAdminEvents;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use FOS\UserBundle\FOSUserEvents;
+use FOS\UserBundle\Event\FormEvent;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class AppSubscriber implements EventSubscriberInterface
 {
@@ -32,7 +35,8 @@ class AppSubscriber implements EventSubscriberInterface
             EasyAdminEvents::PRE_EDIT => 'checkUserRights',
             EasyAdminEvents::PRE_SHOW => 'checkUserRights',
             EasyAdminEvents::PRE_NEW => 'checkUserRights',
-            EasyAdminEvents::PRE_DELETE => 'checkUserRights'
+            EasyAdminEvents::PRE_DELETE => 'checkUserRights',
+            FOSUserEvents::RESETTING_RESET_SUCCESS => 'redirectUserAfterPasswordReset'
         );
     }
 
@@ -67,5 +71,17 @@ class AppSubscriber implements EventSubscriberInterface
 
         // throw exception in all cases
         throw new AccessDeniedException();
+    }
+
+    /**
+     * Redirect user to another page after password reset is success
+     *
+     * @param  Configure $event GetResponseUserEvent
+     * @return null
+     */
+    public function redirectUserAfterPasswordReset(FormEvent $event)
+    {
+        $url = $this->container->get('router')->generate('admin');
+        $event->setResponse(new RedirectResponse($url));
     }
 }

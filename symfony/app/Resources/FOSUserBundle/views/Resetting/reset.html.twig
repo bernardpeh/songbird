@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}
+    {{ 'resetting.request.submit'|trans }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/app/css/signin.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+
+    <img src="{{ asset('bundles/app/images/logo.png') }}" class="center-block img-responsive" alt="Songbird" />
+
+    <div class="container">
+        <div class="text-center">
+            <h3>Enter Your New Password</h3>
+            <form class="form-signin" action="{{ path('fos_user_resetting_reset', {'token': token}) }}" method="post">
+
+                {% if (app.request.get('fos_user_resetting_form')['plainPassword']['first']) is defined and (app.request.get('fos_user_resetting_form')['plainPassword']['first'] != app.request.get('fos_user_resetting_form')['plainPassword']['second']) %}
+                    <div class="alert alert-danger">
+                        {{ 'fos_user.password.mismatch' | trans({}, 'validators') }}
+                    </div>
+                {% endif %}
+
+                {{ form_widget(form._token) }}
+                <input type="password" id="fos_user_resetting_form_plainPassword_first" name="fos_user_resetting_form[plainPassword][first]" class="form-control" required="required" placeholder="{{ 'form.new_password'|trans }}" />
+
+                <input type="password" id="fos_user_resetting_form_plainPassword_second" name="fos_user_resetting_form[plainPassword][second]" class="form-control" required="required" placeholder="{{ 'form.new_password_confirmation'|trans }}" />
+
+                <input class="btn btn-lg btn-primary btn-block" type="submit" id="_submit" name="_submit" value="{{ 'resetting.reset.submit'|trans }}" />
+            </form>
+
+        </div>
+
+    </div>
+{% endblock %}

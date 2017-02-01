@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}
+    {{ 'resetting.request.submit'|trans }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/app/css/signin.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+
+    <img src="{{ asset('bundles/app/images/logo.png') }}" class="center-block img-responsive" alt="Songbird" />
+
+    <div class="container">
+        <div class="text-center">
+            <h3>Enter Your Username or Password</h3>
+            <form class="form-signin" action="{{ path('fos_user_resetting_send_email') }}" method="POST">
+                {% if invalid_username is defined %}
+                    <div class="alert alert-danger">{{ 'resetting.request.invalid_username'|trans({'%username%': app.request.get('username')}) }}</div>
+                {% endif %}
+                <input type="text" id="username" name="username" class="form-control" required="required" value="{{ app.request.get('username') }}" placeholder="{{ 'resetting.request.username'|trans }}" />
+
+                <input class="btn btn-lg btn-primary btn-block" type="submit" id="_submit" name="_submit" value="{{ 'resetting.request.submit'|trans }}" />
+            </form>
+        </div>
+    </div>
+{% endblock %}
