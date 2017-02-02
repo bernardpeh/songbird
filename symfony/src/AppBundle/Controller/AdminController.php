@@ -4,9 +4,23 @@ namespace AppBundle\Controller;
 
 use JavierEguiluz\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
 use JavierEguiluz\Bundle\EasyAdminBundle\Event\EasyAdminEvents;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class AdminController extends BaseAdminController
 {
+    /**
+     * @Route("/dashboard", name="dashboard")
+     *
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     */
+    public function dashboardAction(Request $request)
+    {
+        return $this->render('@EasyAdmin/default/dashboard.html.twig');
+    }
+
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      */
