@@ -8,12 +8,13 @@
 
 {% block user_menu %}
     <span class="sr-only">{{ 'user.logged_in_as'|trans(domain = 'EasyAdminBundle') }}</span>
-    <i class="hidden-xs fa fa-user"></i>
-    {% if app.user|default %}
-        {{ app.user.username|default('user.unnamed'|trans(domain = 'EasyAdminBundle')) }}
-    {% else %}
-        {{ 'user.anonymous'|trans(domain = 'EasyAdminBundle') }}
-    {% endif %}
+    <i class="hidden-xs fa fa-user">
+        {% if app.user %}
+            <a href="{{ path('easyadmin') }}/?entity=User&action=show&id={{ app.user.id }}">{{ app.user.username|default('user.unnamed'|trans(domain = 'EasyAdminBundle')) }}</a>
+        {% else %}
+            {{ 'user.anonymous'|trans(domain = 'EasyAdminBundle') }}
+        {% endif %}
+    </i>
     <i class="hidden-xs fa fa-sign-out"><a href="{{ path('fos_user_security_logout') }}">Logout</a></i>
 {% endblock user_menu %}
 

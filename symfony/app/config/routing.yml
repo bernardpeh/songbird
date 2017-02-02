@@ -12,4 +12,4 @@ fos_user_resetting:
 easy_admin_bundle:
     resource: "@AppBundle/Controller/AdminController.php"
     type:     annotation
-    prefix:   /admin
+    prefix:   /%admin_path%
