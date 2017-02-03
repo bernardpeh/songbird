@@ -38,14 +38,15 @@ class IWantToLoginCest
     /**
      * GIVEN See my dashboard content
      * WHEN I login correctly
-     * THEN I should see the text User Management
+     * THEN I should see the text "User Management" and "Dear Admin"
      *
      * Scenario 10.2.2
      * @before login
      */
     public function seeMyDashboardContent(AcceptanceTester $I) {
-        $I->canSeeInCurrentUrl('/admin/?action=list&entity=User');
-        $I->canSee('User Listing');
+        $I->canSeeInCurrentUrl('/admin/dashboard');
+        $I->canSee('Dear Admin');
+        $I->canSee('User Management');
     }
 
     /**

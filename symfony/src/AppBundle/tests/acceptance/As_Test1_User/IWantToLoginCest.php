@@ -42,13 +42,15 @@ class IWantToLoginCest
     /**
      * GIVEN See my dashboard content
      * WHEN I login correctly
-     * THEN I should see Access Denied
+     * THEN I should not see the text "User Management" and should see the text "Dear test1"
      *
      * Scenario 10.1.2
      * @before login
      */
     public function seeMyDashboardContent(AcceptanceTester $I) {
-        $I->canSee('403');
+        $I->canSeeInCurrentUrl('/admin/dashboard');
+        $I->canSee('Dear test1');
+        $I->cantSee('User Management');
     }
 
     /**

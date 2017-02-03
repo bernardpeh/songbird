@@ -1,23 +1,5 @@
 {%  extends '@EasyAdmin/default/layout.html.twig' %}
 
-{% block header_logo %}
-    <a class="logo {{ easyadmin_config('site_name')|length > 14 ? 'logo-long' }}" title="{{ easyadmin_config('site_name')|striptags }}" href="{{ path('easyadmin') }}">
-        <img src="/bundles/app/images/logo.png" />
-    </a>
-{% endblock header_logo %}
-
-{% block user_menu %}
-    <span class="sr-only">{{ 'user.logged_in_as'|trans(domain = 'EasyAdminBundle') }}</span>
-    <i class="hidden-xs fa fa-user">
-        {% if app.user %}
-            <a href="{{ path('easyadmin') }}/?entity=User&action=show&id={{ app.user.id }}">{{ app.user.username|default('user.unnamed'|trans(domain = 'EasyAdminBundle')) }}</a>
-        {% else %}
-            {{ 'user.anonymous'|trans(domain = 'EasyAdminBundle') }}
-        {% endif %}
-    </i>
-    <i class="hidden-xs fa fa-sign-out"><a href="{{ path('fos_user_security_logout') }}">Logout</a></i>
-{% endblock user_menu %}
-
 {% block main %}
 <p>
     Dear {{ app.user.firstname }} {{ app.user.lastname }},
