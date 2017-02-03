@@ -37,7 +37,7 @@ class IWantToManageAllUsersCest
      */
     public function listAllProfiles(AcceptanceTester $I)
     {
-        $I->amOnPage('/admin/?action=list&entity=User');
+        $I->click('User Management');
         $I->canSeeNumberOfElements('//table/tbody/tr',4);
     }
 
@@ -52,7 +52,7 @@ class IWantToManageAllUsersCest
     public function showTest3User(AcceptanceTester $I)
     {
         // go to user listing page
-        $I->amOnPage('/admin/?action=list&entity=User');
+        $I->click('User Management');
         // click on show button
         $I->click('Show');
         $I->waitForText('test3@songbird.app');
@@ -70,7 +70,7 @@ class IWantToManageAllUsersCest
     public function editTest3User(AcceptanceTester $I)
     {
         // go to user listing page
-        $I->amOnPage('/admin/?action=list&entity=User');
+        $I->click('User Management');
         // click on edit button
         $I->click('Edit');
         // check we are on the right url
@@ -79,13 +79,13 @@ class IWantToManageAllUsersCest
         // update
         $I->click('//button[@type="submit"]');
         // go back to listing page
-        $I->amOnPage('/admin/?action=list&entity=User');
+        $I->click('User Management');
         $I->canSee('lastname3 updated');
         // now revert username
         $I->amOnPage('/admin/?action=edit&entity=User&id=4');
         $I->fillField('//input[@value="lastname3 updated"]', 'test3 Lastname');
         $I->click('//button[@type="submit"]');
-        $I->amOnPage('/admin/?action=list&entity=User');
+        $I->click('User Management');
         $I->canSee('test3 Lastname');
     }
 
