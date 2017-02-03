@@ -54,8 +54,6 @@ class IWantToResetPasswordWithoutLoggingInCest
         $I->fillField('//input[@id="fos_user_resetting_form_plainPassword_first"]', '1111');
         $I->fillField('//input[@id="fos_user_resetting_form_plainPassword_second"]', '1111');
         $I->click('_submit');
-        // at dashbpard, i should see access denied
-        $I->canSee('403');
         // now at show page
         $I->amOnPage('/admin/?action=show&entity=User&id=2');
         $I->canSee('The password has been reset successfully');
@@ -71,8 +69,8 @@ class IWantToResetPasswordWithoutLoggingInCest
         // i am on the show page
         $I->canSeeInCurrentUrl('/admin/?action=show&entity=User&id=2');
 
-        // i not should be able to login with the old password
+        // i should be able to login with old password
         $this->login($I);
-        $I->canSee('403');
+        $I->canSee('Dear test1');
     }
 }

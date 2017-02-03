@@ -66,12 +66,12 @@ class IShouldNotBeAbleToManageOtherProfilesCest
     /**
      * GIVEN Edit test2 user profile
      * WHEN I go to "/admin/?action=edit&entity=User&id=3"
-     * THEN I should get an "access denied" error
+     * THEN I should see "Dear test1"
      *
      * Scenario 10.5.4
      * @before login
      */
     public function seeAdminDashboardContent(AcceptanceTester $I) {
-        $I->canSee('403');
+        $I->canSee('Dear test1');
     }
 }
