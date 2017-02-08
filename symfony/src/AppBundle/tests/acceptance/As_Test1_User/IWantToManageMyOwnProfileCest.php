@@ -100,7 +100,7 @@ class IWantToManageMyOwnProfileCest
         $I->amOnPage('/logout');
         Common::login($I, TEST1_USERNAME, '123');
         // i can login and at dashboard now
-        $I->canSee('403');
+        $I->canSee('Dear test1');
         // reset everything back
         $I->amOnPage('/admin/?action=edit&entity=User&id=2');
         $I->fillField('//input[contains(@id, "_plainPassword_first")]', TEST1_PASSWORD);
@@ -110,6 +110,6 @@ class IWantToManageMyOwnProfileCest
         $I->canSeeInCurrentUrl('/admin/?action=show&entity=User&id=2');
         // i should be able to login with the old password
         $this->login($I);
-        $I->canSee('403');
+        $I->canSee('Dear test1');
     }
 }
