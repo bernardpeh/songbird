@@ -2,7 +2,7 @@ easy_admin:
     entities:
         User:
             class: AppBundle\Entity\User
-            label: 'User Management'
+            label: admin.link.user_management
             # for new user
             new:
                 fields:

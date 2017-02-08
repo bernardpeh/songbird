@@ -5,3 +5,10 @@ services:
                 - "@service_container"
             tags:
                 - { name: kernel.event_subscriber }
+
+    app.locale.listener:
+        class: AppBundle\EventListener\LocaleListener
+        arguments:
+          - "%kernel.default_locale%"
+        tags:
+          - { name: kernel.event_listener, event: kernel.request, priority: 17 }
