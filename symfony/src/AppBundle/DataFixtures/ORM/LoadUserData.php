@@ -41,6 +41,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         $admin->setFirstname('Admin Firstname');
         $admin->setLastname('Admin Lastname');
         $admin->setRoles(array('ROLE_SUPER_ADMIN'));
+        $admin->setImage('test_profile.jpg');
         $userManager->updateUser($admin);
 
         // add test user 1
@@ -52,6 +53,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         $test1->setEnabled(1);
         $test1->setFirstname('test1 Firstname');
         $test1->setLastname('test1 Lastname');
+        $test1->setImage('test_profile.jpg');
         $userManager->updateUser($test1);
 
         // add test user 2
@@ -63,6 +65,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         $test2->setEnabled(1);
         $test2->setFirstname('test2 Firstname');
         $test2->setLastname('test2 Lastname');
+        $test2->setImage('test_profile.jpg');
         $userManager->updateUser($test2);
 
         // add test user 3
@@ -74,6 +77,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         $test3->setEnabled(0);
         $test3->setFirstname('test3 Firstname');
         $test3->setLastname('test3 Lastname');
+        $test3->setImage('test_profile.jpg');
         $userManager->updateUser($test3);
 
         // use this reference in data fixtures elsewhere

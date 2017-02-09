@@ -5,3 +5,6 @@ scripts/console doctrine:database:drop --force
 scripts/console doctrine:database:create
 scripts/console doctrine:schema:create
 scripts/console doctrine:fixtures:load -n
+
+# copy test data over to web folder
+cp src/AppBundle/tests/_data/test_profile.jpg web/uploads/profiles/

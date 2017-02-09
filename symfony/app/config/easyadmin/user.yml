@@ -11,6 +11,7 @@ easy_admin:
                   - lastname
                   - { property: 'plainPassword', type: 'repeated', type_options: { type: 'Symfony\Component\Form\Extension\Core\Type\PasswordType', first_options: {label: 'Password'}, second_options: {label: 'Repeat Password'}, invalid_message: 'The password fields must match.'}}
                   - { property: 'email', type: 'email', type_options: { trim: true } }
+                  - { property: 'imageFile', type: 'vich_image' }
                   - roles
                   - enabled
             edit:
@@ -21,12 +22,14 @@ easy_admin:
                     - lastname
                     - { property: 'plainPassword', type: 'repeated', type_options: { type: 'Symfony\Component\Form\Extension\Core\Type\PasswordType', required: false, first_options: {label: 'Password'}, second_options: {label: 'Repeat Password'}, invalid_message: 'The password fields must match.'}}
                     - { property: 'email', type: 'email', type_options: { trim: true } }
+                    - { property: 'imageFile', type: 'vich_image' }
                     - roles
                     - enabled
             show:
                   actions: ['edit', '-delete', '-list']
                   fields:
                     - id
+                    - { property: 'image', type: 'image', base_path: '%app.profile_image.path%'}
                     - username
                     - firstname
                     - lastname
@@ -41,6 +44,7 @@ easy_admin:
                 actions: ['show']
                 fields:
                   - id
+                  - { property: 'image', type: 'image', base_path: '%app.profile_image.path%'}
                   - username
                   - email
                   - firstname
