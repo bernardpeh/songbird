@@ -30,7 +30,7 @@ class IWantToManageMyOwnProfileCest
     /**
      * GIVEN Show my profile
      * WHEN I go to "/admin/?action=show&entity=User&id=2"
-     * THEN I should see test1@songbird.app
+     * THEN I should see test1@songbird.app and an Image field
      *
      * Scenario 10.4.1
      * @before login
@@ -40,6 +40,8 @@ class IWantToManageMyOwnProfileCest
         $I->amOnPage('/admin/?action=show&entity=User&id=2');
         $I->canSee('test1@songbird.app');
         $I->canSee('Email');
+        $I->waitForElement('//img[contains(@src, "test_profile")]');
+        $I->canSee('//img[contains(@src, "test_profile")]');
     }
 
     /**
@@ -111,5 +113,71 @@ class IWantToManageMyOwnProfileCest
         // i should be able to login with the old password
         $this->login($I);
         $I->canSee('Dear test1');
+    }
+
+    /**
+     * GIVEN Delete and Add profile image
+     * WHEN I go to edit profile page And delete profile image and add a new image
+     * THEN I should see an empty profile, previous profile image gone and then a new one appearing in the file system
+     *
+     * Scenario 10.4.5
+     * @before login
+     */
+    public function deleteAndAddProfileImage(AcceptanceTester $I)
+    {
+        // get original image
+        $imagePath = $I->grabFromDatabase('user', 'image', array('username' => 'test1'));
+        // check image available
+        $I->canSeeFileFound($imagePath, '../../web/uploads/profiles');
+        $I->click('test1');
+        $I->click('Edit');
+        $I->click('//input[@id="user_imageFile_delete"]');
+        // submit form
+        $I->click('//button[@type="submit"]');
+        // i am on the show page
+        $I->canSeeInCurrentUrl('/admin/?action=show&entity=User&id=2');
+        // can see empty images
+        $I->canSee('Empty');
+        // check that image is not there
+        $I->cantSeeFileFound($imagePath, '../../web/uploads/profiles');
+        // now revert changes
+        $I->click('test1');
+        $I->click('Edit');
+        $I->waitForElementVisible('//input[@type="file"]');
+        $I->attachFile('//input[@type="file"]', 'test_profile.jpg');
+        // update
+        $I->click('//button[@type="submit"]');
+        // get image from db
+        $imagePath = $I->grabFromDatabase('user', 'image', array('username' => 'test1'));
+        // check image available
+        $I->canSeeFileFound($imagePath, '../../web/uploads/profiles');
+    }
+
+    /**
+     * GIVEN Update profile image Only
+     * WHEN I go to edit profile page And update profile image and submit
+     * THEN I should see user profile updated and previous profile image gone from file system
+     *
+     * Scenario 10.4.6
+     * @before login
+     */
+    public function updateProfileImageOnly(AcceptanceTester $I)
+    {
+        // get original image
+        $imagePath = $I->grabFromDatabase('user', 'image', array('username' => 'test1'));
+        // check image available
+        $I->canSeeFileFound($imagePath, '../../web/uploads/profiles');
+        $I->click('test1');
+        $I->click('Edit');
+        $I->attachFile('//input[@type="file"]', 'test_profile.jpg');
+        // submit form
+        $I->click('//button[@type="submit"]');
+        // get new id
+        $imagePath = $I->grabFromDatabase('user', 'image', array('username' => 'test1'));
+        // i am on the show page
+        $I->canSeeInCurrentUrl('/admin/?action=show&entity=User&id=2');
+        // can see new image
+        $I->waitForElement('//img[contains(@src, "'.$imagePath.'")]');
+        $I->canSeeFileFound($imagePath, '../../web/uploads/profiles');
     }
 }

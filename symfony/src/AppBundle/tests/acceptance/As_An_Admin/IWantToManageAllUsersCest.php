@@ -30,7 +30,7 @@ class IWantToManageAllUsersCest
     /**
      * GIVEN List all profiles
      * WHEN I go to "/admin/?action=list&entity=User" url
-     * THEN I should see a list of all users in a table
+     * THEN I should see a list of all users in a table with image fields
      *
      * Scenario 10.6.1
      * @before login
@@ -39,6 +39,7 @@ class IWantToManageAllUsersCest
     {
         $I->click('User Management');
         $I->canSeeNumberOfElements('//table/tbody/tr',4);
+        $I->seeNumberOfElements('//td[@data-label="Image"]',4);
     }
 
     /**
