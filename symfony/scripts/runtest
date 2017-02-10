@@ -1,4 +1,4 @@
 #!/bin/bash
 
-bin/console cache:clear --no-warmup
-vendor/bin/codecept run acceptance
+docker-compose exec php bin/console cache:clear --no-warmup
+docker-compose exec php vendor/bin/codecept run acceptance
