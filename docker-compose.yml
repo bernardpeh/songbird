@@ -36,6 +36,16 @@ services:
         networks:
             mynet:
                 ipv4_address: 172.25.0.4
+    phantomjs:
+        image: shufo/phantomjs
+        extra_hosts:
+            - ${DOMAIN}:172.25.0.4
+        command: --webdriver 4444
+        ports:
+          - 4444:4444
+        networks:
+            mynet:
+                ipv4_address: 172.25.0.5
     mailcatcher:
         image: yappabe/mailcatcher
         ports:
@@ -43,7 +53,7 @@ services:
           - 1080:1080
         networks:
             mynet:
-                ipv4_address: 172.25.0.5
+                ipv4_address: 172.25.0.6
 networks:
     mynet:
         driver: bridge
