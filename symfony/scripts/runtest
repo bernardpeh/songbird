@@ -1,4 +1,4 @@
 #!/bin/bash
 
 scripts/resetapp
-vendor/bin/codecept run acceptance $@ -c src/AppBundle
+docker-compose exec php vendor/bin/codecept run acceptance $@ -c src/AppBundle
