@@ -10,6 +10,11 @@ services:
             MYSQL_DATABASE: ${MYSQL_DATABASE}
             MYSQL_USER: ${MYSQL_USER}
             MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        ports:
+            - 8006:3306
+        networks:
+            mynet:
+                ipv4_address: 172.25.0.2
     php:
         build: php7-fpm
         ports:
@@ -17,6 +22,9 @@ services:
         volumes:
             - ${SYMFONY_APP_PATH}:/var/www/symfony
             - ./logs/symfony:/var/www/symfony/var/logs
+        networks:
+            mynet:
+                ipv4_address: 172.25.0.3
     nginx:
         build: nginx
         ports:
@@ -25,3 +33,12 @@ services:
             - php
         volumes:
             - ./logs/nginx/:/var/log/nginx
+        networks:
+            mynet:
+                ipv4_address: 172.25.0.4
+networks:
+    mynet:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 172.25.0.0/24
