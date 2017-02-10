@@ -1,32 +1,52 @@
 version: '2'
 
 services:
-  db:
-    image: mysql
-    volumes:
-      - "./.data/db:/var/lib/mysql"
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-  php:
-    build: php7-fpm
-    ports:
-      - 9000:9000
-    volumes:
-      - ${SYMFONY_APP_PATH}:/var/www/symfony
-      - ./logs/symfony:/var/www/symfony/var/logs
-  nginx:
-    build: nginx
-    ports:
-      - 8000:80
-    volumes_from:
-      - php
-    volumes:
-      - ./logs/nginx/:/var/log/nginx
-  mailcatcher:
-    image: yappabe/mailcatcher
-    ports:
-      - 1025:1025
-      - 1080:1080
+    db:
+        image: mysql
+        volumes:
+            - "./.data/db:/var/lib/mysql"
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        ports:
+            - 8006:3306
+        networks:
+            mynet:
+                ipv4_address: 172.25.0.2
+    php:
+        build: php7-fpm
+        ports:
+            - 9000:9000
+        volumes:
+            - ${SYMFONY_APP_PATH}:/var/www/symfony
+            - ./logs/symfony:/var/www/symfony/var/logs
+        networks:
+            mynet:
+                ipv4_address: 172.25.0.3
+    nginx:
+        build: nginx
+        ports:
+            - 8000:80
+        volumes_from:
+            - php
+        volumes:
+            - ./logs/nginx/:/var/log/nginx
+        networks:
+            mynet:
+                ipv4_address: 172.25.0.4
+    mailcatcher:
+        image: yappabe/mailcatcher
+        ports:
+          - 1025:1025
+          - 1080:1080
+        networks:
+            mynet:
+                ipv4_address: 172.25.0.5
+networks:
+    mynet:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 172.25.0.0/24
