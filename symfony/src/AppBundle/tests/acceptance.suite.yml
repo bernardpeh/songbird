@@ -8,15 +8,17 @@ class_name: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: 'http://songbird.app:8000'
+            url: 'http://songbird.app'
+            host: 172.25.0.5
+            port: 4444
             browser: phantomjs
             window_size: 1024x768
             capabilities:
                 unexpectedAlertBehaviour: 'accept'
                 webStorageEnabled: true
         - MailCatcher:
-            url: 'http://songbird.app'
-            port: '1080'
+                url: 'http://172.25.0.6'
+                port: '1080'
         - FileSystem:
         - Db:
         - \Helper\Acceptance

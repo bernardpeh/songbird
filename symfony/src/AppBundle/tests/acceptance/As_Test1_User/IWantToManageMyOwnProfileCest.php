@@ -40,8 +40,11 @@ class IWantToManageMyOwnProfileCest
         $I->amOnPage('/admin/?action=show&entity=User&id=2');
         $I->canSee('test1@songbird.app');
         $I->canSee('Email');
-        $I->waitForElement('//img[contains(@src, "test_profile")]');
-        $I->canSee('//img[contains(@src, "test_profile")]');
+        // get original image
+        $imagePath = $I->grabFromDatabase('user', 'image', array('username' => 'test1'));
+        // can see new image
+        $I->waitForElement('//img[contains(@src, "'.$imagePath.'")]');
+        $I->canSeeFileFound($imagePath, '../../web/uploads/profiles');
     }
 
     /**
