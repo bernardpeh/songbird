@@ -1,3 +1,0 @@
-#!/bin/bash
-
-scripts/phantomjs --webdriver=4444
