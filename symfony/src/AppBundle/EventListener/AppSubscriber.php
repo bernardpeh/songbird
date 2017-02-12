@@ -36,8 +36,39 @@ class AppSubscriber implements EventSubscriberInterface
             EasyAdminEvents::PRE_SHOW => 'checkUserRights',
             EasyAdminEvents::PRE_NEW => 'checkUserRights',
             EasyAdminEvents::PRE_DELETE => 'checkUserRights',
-            FOSUserEvents::RESETTING_RESET_SUCCESS => 'redirectUserAfterPasswordReset'
+            FOSUserEvents::RESETTING_RESET_SUCCESS => 'redirectUserAfterPasswordReset',
+            KernelEvents::REQUEST => 'onKernelRequest'
         );
+    }
+
+    /**
+     * We will log request to db on every url change
+     *
+     * @param GetResponseEvent $event
+     */
+    public function onKernelRequest(GetResponseEvent $event)
+    {
+        $request = $event->getRequest();
+        $current_url = $request->server->get('REQUEST_URI');
+        // ensures we track admin only.
+        $admin_path = $this->container->getParameter('admin_path');
+
+        // only log admin area and only if user is logged in. Dont log search by filter
+        if (!is_null($this->container->get('security.token_storage')->getToken()) && preg_match('/\/'.$admin_path.'\//', $current_url)
+            && ($request->query->get('filter') === null) && !preg_match('/\/userlog\//', $current_url)) {
+
+            $em = $this->container->get('doctrine.orm.entity_manager');
+            $log = new UserLog();
+            $log->setData(json_encode($request->request->all()));
+            $log->setUsername($this->container->get('security.token_storage')->getToken()->getUser()
+                ->getUsername());
+            $log->setCurrentUrl($current_url);
+            $log->setReferrer($request->server->get('HTTP_REFERER'));
+            $log->setAction($request->getMethod());
+            $log->setCreated(new \DateTime('now'));
+            $em->persist($log);
+            $em->flush();
+        }
     }
 
     /**

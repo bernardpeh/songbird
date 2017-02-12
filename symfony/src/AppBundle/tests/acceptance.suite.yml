@@ -21,4 +21,5 @@ modules:
                 port: '1080'
         - FileSystem:
         - Db:
+        - Asserts:
         - \Helper\Acceptance

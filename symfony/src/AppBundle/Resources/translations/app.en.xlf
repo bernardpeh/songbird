@@ -24,6 +24,10 @@
                 <source>admin.link.profile</source>
                 <target>My Profile</target>
             </trans-unit>
+            <trans-unit id="6">
+                <source>admin.link.user_log</source>
+                <target>User Log</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
