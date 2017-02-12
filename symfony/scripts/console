@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker-compose exec php bin/console $@
+docker-compose exec php bin/console "$@"
