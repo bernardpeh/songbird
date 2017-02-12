@@ -1,15 +1,15 @@
 {%  extends '@EasyAdmin/default/layout.html.twig' %}
 
 {% block main %}
-<p>
-    Dear {{ app.user.firstname }} {{ app.user.lastname }},
-</p>
-<p>
-    You are last logged in at {{ app.user.lastLogin | date('Y-m-d H:i:s') }}
-</p>
+    <p>
+        Dear {{ app.user.firstname }} {{ app.user.lastname }},
+    </p>
+    <p>
+        {{ 'dashboard.welcome.last_login' | trans({}, 'app') }} {{ app.user.lastLogin | date('Y-m-d H:i:s') }}
+    </p>
 
-<p>
-    The whole project can be forked from <a href="https://github.com/bernardpeh/songbird">github</a>
-</p>
+    <p>
+        {{ 'dashboard.welcome.credit' | trans({}, 'app') | raw }}
+    </p>
 
 {% endblock %}

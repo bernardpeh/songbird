@@ -1,0 +1,9 @@
+easy_admin:
+    entities:
+        UserLog:
+            class: AppBundle\Entity\UserLog
+            label: admin.link.user_log
+            show:
+                  actions: ['list', '-edit', '-delete']
+            list:
+                actions: ['show', '-edit', '-delete']
