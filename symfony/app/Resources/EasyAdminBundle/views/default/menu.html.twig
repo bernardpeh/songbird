@@ -35,7 +35,8 @@
         {% if is_granted('ROLE_SUPER_ADMIN') %}
             {% for item in easyadmin_config('design.menu') %}
                 <li class="{{ item.type == 'divider' ? 'header' }} {{ item.children is not empty ? 'treeview' }} {{ app.request.query.get('menuIndex')|default(-1) == loop.index0 ? 'active' }} {{ app.request.query.get('submenuIndex')|default(-1) != -1 ? 'submenu-active' }}">
-                    {{ helper.render_menu_item(item, _entity_config.translation_domain|default('messages')) }}
+
+                    {{ helper.render_menu_item(item, 'app') }}
 
                     {% if item.children|default([]) is not empty %}
                         <ul class="treeview-menu">

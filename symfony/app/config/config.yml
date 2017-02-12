@@ -7,7 +7,9 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    # set this to english as default
     locale: en
+    supported_lang: [ 'en', 'fr']
     admin_path: admin
     app.profile_image.path: /uploads/profiles
 
@@ -41,7 +43,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-
+    globals:
+        supported_lang: %supported_lang%
 # Doctrine Configuration
 doctrine:
     dbal:
