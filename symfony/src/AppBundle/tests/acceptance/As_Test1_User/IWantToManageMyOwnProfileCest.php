@@ -131,29 +131,27 @@ class IWantToManageMyOwnProfileCest
         // get original image
         $imagePath = $I->grabFromDatabase('user', 'image', array('username' => 'test1'));
         // check image available
-        $I->canSeeFileFound($imagePath, '../../web/uploads/profiles');
+        $I->canSeeFileFound($imagePath, getcwd().'/web/uploads/profiles');
         $I->click('test1');
         $I->click('Edit');
         $I->click('//input[@id="user_imageFile_delete"]');
         // submit form
         $I->click('//button[@type="submit"]');
         // i am on the show page
-        $I->canSeeInCurrentUrl('/admin/?action=show&entity=User&id=2');
-        // can see empty images
-        $I->canSee('Empty');
+        $I->waitForText('NULL');
         // check that image is not there
-        $I->cantSeeFileFound($imagePath, '../../web/uploads/profiles');
+        $I->cantSeeFileFound($imagePath, getcwd().'/web/uploads/profiles');
         // now revert changes
-        $I->click('test1');
         $I->click('Edit');
         $I->waitForElementVisible('//input[@type="file"]');
         $I->attachFile('//input[@type="file"]', 'test_profile.jpg');
         // update
         $I->click('//button[@type="submit"]');
+        $I->waitForElement('//img[contains(@src, "'.$imagePath.'")]');
         // get image from db
         $imagePath = $I->grabFromDatabase('user', 'image', array('username' => 'test1'));
         // check image available
-        $I->canSeeFileFound($imagePath, '../../web/uploads/profiles');
+        $I->canSeeFileFound($imagePath, getcwd().'/web/uploads/profiles');
     }
 
     /**
@@ -169,7 +167,7 @@ class IWantToManageMyOwnProfileCest
         // get original image
         $imagePath = $I->grabFromDatabase('user', 'image', array('username' => 'test1'));
         // check image available
-        $I->canSeeFileFound($imagePath, '../../web/uploads/profiles');
+        $I->canSeeFileFound($imagePath, getcwd().'/web/uploads/profiles');
         $I->click('test1');
         $I->click('Edit');
         $I->attachFile('//input[@type="file"]', 'test_profile.jpg');
@@ -181,6 +179,6 @@ class IWantToManageMyOwnProfileCest
         $I->canSeeInCurrentUrl('/admin/?action=show&entity=User&id=2');
         // can see new image
         $I->waitForElement('//img[contains(@src, "'.$imagePath.'")]');
-        $I->canSeeFileFound($imagePath, '../../web/uploads/profiles');
+        $I->canSeeFileFound($imagePath, getcwd().'/web/uploads/profiles');
     }
 }
