@@ -41,7 +41,7 @@ class IDontWantToManageUserLogCest
     {
         $I->cantSee('User Log');
         $I->amOnPage('/admin/?entity=UserLog&action=list');
-        $I->canSee('access denied');
+        $I->canSee('403');
     }
 
     /**
@@ -56,7 +56,7 @@ class IDontWantToManageUserLogCest
     {
         // go to user listing page
         $I->amOnPage('/admin/?entity=UserLog&action=show&id=1');
-        $I->canSee('access denied');
+        $I->canSee('403');
     }
 
     /**
@@ -71,6 +71,6 @@ class IDontWantToManageUserLogCest
     {
         // go to user listing page
         $I->amOnPage('/admin/?entity=UserLog&action=edit&id=1');
-        $I->canSee('access denied');
+        $I->canSee('403');
     }
 }
