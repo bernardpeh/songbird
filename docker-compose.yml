@@ -54,6 +54,14 @@ services:
         networks:
             mynet:
                 ipv4_address: 172.25.0.6
+    blackfire:
+       image: blackfire/blackfire
+       environment:
+            - BLACKFIRE_SERVER_ID=${BLACKFIRE_SERVER_ID}
+            - BLACKFIRE_SERVER_TOKEN=${BLACKFIRE_SERVER_TOKEN}
+       networks:
+           mynet:
+               ipv4_address: 172.25.0.7
 networks:
     mynet:
         driver: bridge

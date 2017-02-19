@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# optimise composer
+scripts/composer dump-autoload --optimize --no-dev --classmap-authoritative

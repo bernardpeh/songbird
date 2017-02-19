@@ -1,10 +1,50 @@
 #!/bin/bash
-rm -rf var/cache/*
-# scripts/console cache:clear --no-warmup
+
+usage()
+{
+cat << EOF
+
+usage: $0 [options]
+
+This script clears the cache, resets the db and install the fixtures
+
+OPTIONS:
+   -f      Don't load fixtures
+   -c      Don't clear cache (for all env)
+EOF
+exit 1
+}
+
+CLEAR_CACHE=1
+LOAD_FIXTURES=1
+while getopts "cf" o; do
+    case "${o}" in
+        c)
+            CLEAR_CACHE=
+            ;;
+        f)
+            LOAD_FIXTURES=
+            ;;
+        *)
+            usage
+            ;;
+    esac
+done
+
+if [[ $CLEAR_CACHE ]]
+then
+    rm -rf app/cache/*
+    # bin/console cache:clear --env=prod --no-warmup
+fi
+
 scripts/console doctrine:database:drop --force
 scripts/console doctrine:database:create
 scripts/console doctrine:schema:create
-scripts/console doctrine:fixtures:load -n
+
+if [[ $LOAD_FIXTURES ]]
+then
+    scripts/console doctrine:fixtures:load -n
+fi
 
 # copy test data over to web folder
 cp src/AppBundle/tests/_data/test_profile.jpg web/uploads/profiles/
