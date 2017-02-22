@@ -1,5 +1,7 @@
 # CHANGELOG
 
+* 23 feb 2017 - up to chapter 16. Used docker for blackfire instead.
+
 * 1 Feb 2017 - Up to chapter 11. Used docker to setup mailcatcher module instead.
 
 * 28 Jan 2017 - At Chapter 8. Added DoctrineMigrationsBundle section.
