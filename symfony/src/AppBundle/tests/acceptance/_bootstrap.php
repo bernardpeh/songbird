@@ -12,7 +12,7 @@ define('TEST3_PASSWORD', 'test3');
 
 class Common
 {
-	public static function login(AcceptanceTester $I, $user, $pass)
+    public static function login(AcceptanceTester $I, $user, $pass)
     {
         $I->amOnPage('/login');
         $I->fillField('_username', $user);

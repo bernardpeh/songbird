@@ -1,5 +1,6 @@
 <?php
 namespace As_An_Admin;
+
 use \AcceptanceTester;
 use \Common;
 
@@ -55,5 +56,4 @@ class IWantToManageUserLogCest
         $I->amOnPage('/admin/?entity=UserLog&action=show&id=1');
         $I->canSee('/admin/dashboard');
     }
-
 }

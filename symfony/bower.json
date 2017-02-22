@@ -1,0 +1,21 @@
+{
+  "name": "songbird",
+  "description": "gulp config",
+  "main": "gulpfile.js",
+  "authors": [
+    "bernard peh <bpeh@sitecritic.net>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/bernardpeh/songbird",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7"
+  }
+}

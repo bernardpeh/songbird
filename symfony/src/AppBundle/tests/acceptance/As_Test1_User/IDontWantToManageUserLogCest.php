@@ -15,7 +15,6 @@ use \Common;
  */
 class IDontWantToManageUserLogCest
 {
-
     public function _before(AcceptanceTester $I)
     {
     }

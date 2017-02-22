@@ -4,11 +4,6 @@
     {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
 {% endblock %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    <link href="{{ asset('bundles/app/css/signin.css') }}" rel="stylesheet" />
-{% endblock %}
-
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block content %}

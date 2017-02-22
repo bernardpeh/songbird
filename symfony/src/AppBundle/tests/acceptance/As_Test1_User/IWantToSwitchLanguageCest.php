@@ -1,5 +1,6 @@
 <?php
 namespace As_Test1_User;
+
 use \AcceptanceTester;
 use \Common;
 

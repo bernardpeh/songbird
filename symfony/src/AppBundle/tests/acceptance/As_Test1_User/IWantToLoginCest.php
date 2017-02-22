@@ -34,7 +34,8 @@ class IWantToLoginCest
      *
      * Scenario 10.1.1
      */
-    public function wrongLoginCredentials(AcceptanceTester $I) {
+    public function wrongLoginCredentials(AcceptanceTester $I)
+    {
         Common::login($I, TEST1_USERNAME, '123');
         $I->canSee('Invalid credentials');
     }
@@ -47,7 +48,8 @@ class IWantToLoginCest
      * Scenario 10.1.2
      * @before login
      */
-    public function seeMyDashboardContent(AcceptanceTester $I) {
+    public function seeMyDashboardContent(AcceptanceTester $I)
+    {
         $I->canSeeInCurrentUrl('/admin/dashboard');
         $I->canSee('Dear test1');
         $I->cantSee('User Management');
@@ -61,7 +63,8 @@ class IWantToLoginCest
      * Scenario 10.1.3
      * @before login
      */
-    public function logoutSuccessfully(AcceptanceTester $I) {
+    public function logoutSuccessfully(AcceptanceTester $I)
+    {
         $I->amOnPage('/logout');
         // now user should be redirected to home page
         $I->canSeeInCurrentUrl('/');
@@ -74,7 +77,8 @@ class IWantToLoginCest
      *
      * Scenario 10.1.4
      */
-    public function AccessAdminWithoutLoggingIn(AcceptanceTester $I) {
+    public function AccessAdminWithoutLoggingIn(AcceptanceTester $I)
+    {
         $I->amOnPage('/admin/?action=list&entity=User');
         // now user should be redirected to login page
         $I->canSeeInCurrentUrl('/login');

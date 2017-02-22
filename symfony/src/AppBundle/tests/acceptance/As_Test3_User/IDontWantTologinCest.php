@@ -29,7 +29,8 @@ class IDontWantTologinCest
      *
      * Scenario 10.3.1
      */
-    public function AccountDisabled(AcceptanceTester $I) {
+    public function AccountDisabled(AcceptanceTester $I)
+    {
         Common::login($I, TEST3_USERNAME, TEST3_PASSWORD);
         // i can login and at dashboard now
         $I->canSee('Account is disabled.');

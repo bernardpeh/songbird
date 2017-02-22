@@ -71,7 +71,8 @@ class IShouldNotBeAbleToManageOtherProfilesCest
      * Scenario 10.5.4
      * @before login
      */
-    public function seeAdminDashboardContent(AcceptanceTester $I) {
+    public function seeAdminDashboardContent(AcceptanceTester $I)
+    {
         $I->canSee('Dear test1');
     }
 }

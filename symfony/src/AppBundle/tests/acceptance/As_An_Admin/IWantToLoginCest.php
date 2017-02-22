@@ -1,6 +1,7 @@
 <?php
 
 namespace As_An_Admin;
+
 use \AcceptanceTester;
 use \Common;
 
@@ -31,7 +32,8 @@ class IWantToLoginCest
      *
      * Scenario 10.2.1
      */
-    public function wrongLoginCredentials(AcceptanceTester $I) {
+    public function wrongLoginCredentials(AcceptanceTester $I)
+    {
         Common::login($I, ADMIN_USERNAME, '123');
         $I->canSee('Invalid credentials');
     }
@@ -43,7 +45,8 @@ class IWantToLoginCest
      * Scenario 10.2.2
      * @before login
      */
-    public function seeMyDashboardContent(AcceptanceTester $I) {
+    public function seeMyDashboardContent(AcceptanceTester $I)
+    {
         $I->canSeeInCurrentUrl('/admin/dashboard');
         $I->canSee('Dear Admin');
         $I->canSee('User Management');
@@ -57,7 +60,8 @@ class IWantToLoginCest
      * Scenario 10.2.3
      * @before login
      */
-    public function logoutSuccessfully(AcceptanceTester $I) {
+    public function logoutSuccessfully(AcceptanceTester $I)
+    {
         $I->amOnPage('/logout');
         // now user should be redirected to home page and it should be access denied for now.
         $I->canSeeInCurrentUrl('/');
@@ -69,7 +73,8 @@ class IWantToLoginCest
      *
      * Scenario 10.2.4
      */
-    public function AccessAdminWithoutLoggingIn(AcceptanceTester $I) {
+    public function AccessAdminWithoutLoggingIn(AcceptanceTester $I)
+    {
         $I->amOnPage('/admin/?action=list&entity=User');
         // now user should be redirected to login page
         $I->canSeeInCurrentUrl('/login');

@@ -218,4 +218,3 @@ class UserLog
         return $this->created;
     }
 }
-

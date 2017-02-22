@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}</title>
     {% block stylesheets %}
-        <link href="{{ asset('bundles/app/css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('minified/css/styles.css') }}" rel="stylesheet" />
     {% endblock %}
 </head>
 <body>
@@ -17,8 +17,7 @@
 {% endblock %}
 
 {% block script %}
-    <script src="{{ asset('bundles/app/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('minified/js/javascript.js') }}"></script>
 {% endblock %}
 
 </body>

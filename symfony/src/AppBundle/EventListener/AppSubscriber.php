@@ -59,7 +59,6 @@ class AppSubscriber implements EventSubscriberInterface
         // only log admin area and only if user is logged in. Dont log search by filter
         if (!is_null($this->container->get('security.token_storage')->getToken()) && preg_match('/\/'.$admin_path.'\//', $current_url)
             && ($request->query->get('filter') === null) && !preg_match('/\/userlog\//', $current_url)) {
-
             $em = $this->container->get('doctrine.orm.entity_manager');
             $log = new UserLog();
             $log->setData(json_encode($request->request->all()));

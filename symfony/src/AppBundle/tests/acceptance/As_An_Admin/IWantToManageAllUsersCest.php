@@ -1,6 +1,7 @@
 <?php
 
 namespace As_An_Admin;
+
 use \AcceptanceTester;
 use \Common;
 
@@ -38,8 +39,8 @@ class IWantToManageAllUsersCest
     public function listAllProfiles(AcceptanceTester $I)
     {
         $I->click('User Management');
-        $I->canSeeNumberOfElements('//table/tbody/tr',4);
-        $I->seeNumberOfElements('//td[@data-label="Image"]',4);
+        $I->canSeeNumberOfElements('//table/tbody/tr', 4);
+        $I->seeNumberOfElements('//td[@data-label="Image"]', 4);
     }
 
     /**
