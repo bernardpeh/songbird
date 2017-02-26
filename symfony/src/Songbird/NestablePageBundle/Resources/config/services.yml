@@ -1,0 +1,4 @@
+services:
+#    songbird_nestable_page.example:
+#        class: Songbird\NestablePageBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

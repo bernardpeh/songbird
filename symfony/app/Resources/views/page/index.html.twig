@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pages list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Slug</th>
+                <th>Ispublished</th>
+                <th>Sequence</th>
+                <th>Modified</th>
+                <th>Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for page in pages %}
+            <tr>
+                <td><a href="{{ path('songbird_page_show', { 'id': page.id }) }}">{{ page.id }}</a></td>
+                <td>{{ page.slug }}</td>
+                <td>{% if page.isPublished %}Yes{% else %}No{% endif %}</td>
+                <td>{{ page.sequence }}</td>
+                <td>{% if page.modified %}{{ page.modified|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if page.created %}{{ page.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('songbird_page_show', { 'id': page.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('songbird_page_edit', { 'id': page.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('songbird_page_new') }}">Create a new page</a>
+        </li>
+    </ul>
+{% endblock %}

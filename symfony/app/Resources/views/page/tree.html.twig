@@ -1,0 +1,14 @@
+{% for v in tree %}
+    <li class='dd-item' data-id='{{ v.getId() }}'>
+        <div class='dd-handle'>
+            <a class="dd-nodrag" href="{{ path('songbird_page_show', {id: v.getId()}) }}">{{ v.getSlug() }}</a>
+        </div>
+
+        {% set children = v.getChildren()|length %}
+        {% if children > 0 %}
+            <ol class='dd-list'>
+                {% include "page/tree.html.twig" with { 'tree':v.getChildren() } %}
+            </ol>
+        {% endif %}
+    </li>
+{% endfor %}

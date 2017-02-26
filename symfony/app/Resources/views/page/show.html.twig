@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Page</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ page.id }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ page.slug }}</td>
+            </tr>
+            <tr>
+                <th>Ispublished</th>
+                <td>{% if page.isPublished %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Sequence</th>
+                <td>{{ page.sequence }}</td>
+            </tr>
+            <tr>
+                <th>Modified</th>
+                <td>{% if page.modified %}{{ page.modified|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{% if page.created %}{{ page.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('songbird_page_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('songbird_page_edit', { 'id': page.id }) }}">Edit</a>
+        </li>
+        <li>
+            <a href="{{ path('songbird_pagemeta_show', { 'id': pageMeta.id }) }}">View PageMeta</a>
+        </li>
+        <li>
+            <a href="{{ path('songbird_pagemeta_edit', { 'id': pageMeta.id }) }}">Edit PageMeta</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ -z "$*" ]; then
+	echo -e "\nUsage: $0 VendorName BundleName\n";
+	exit;
+fi
+
+# using symfony bundle generation script is a quick way to generate bundles but doesn't mean its the best way.
+scripts/console generate:bundle --namespace=$1/$2 --dir=src --bundle-name=$1$2 --format=annotation --no-interaction
+rm -rf src/$1/$2/Tests/*
+rm -rf src/$1/$2/Resources/views/Default
+rm src/$1/$2/Controller/DefaultController.php
+
+touch src/$1/$2/Resources/views/.gitkeep
+touch src/$1/$2/Controller/.gitkeep

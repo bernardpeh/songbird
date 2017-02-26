@@ -1,3 +1,8 @@
+songbird_nestable_page:
+    resource: "@SongbirdNestablePageBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
