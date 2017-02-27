@@ -40,7 +40,7 @@ class PageMetaController extends Controller
      */
     public function newAction(Request $request)
     {
-        $pageMetum = new Pagemetum();
+        $pageMetum = new PageMeta();
         $form = $this->createForm('Songbird\NestablePageBundle\Form\PageMetaType', $pageMetum);
         $form->handleRequest($request);
 

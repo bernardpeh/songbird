@@ -65,15 +65,15 @@
 	                url: "{{ path('songbird_page_reorder') }}",
 	                data: {id: id, parentId: parentId, position: position},
 	                success: function (data, dataType) {
-										if (data.success) {
-											$('.alert').addClass('alert-success');
-										}
-										else {
-											$('.alert').addClass('alert-danger');
-										}
-										$('.alert').html(data.message);
-										$('.alert').fadeTo( 0 , 1, function() {});
-										$('.alert').fadeTo( 4000 , 0, function() {});
+						if (data.success) {
+							$('.alert').addClass('alert-success');
+						}
+						else {
+							$('.alert').addClass('alert-danger');
+						}
+						$('.alert').html(data.message);
+						$('.alert').fadeTo( 0 , 1, function() {});
+						$('.alert').fadeTo( 4000 , 0, function() {});
 	                },
 
 	                error: function (XMLHttpRequest, textStatus, errorThrown) {
