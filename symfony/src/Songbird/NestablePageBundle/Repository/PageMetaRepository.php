@@ -2,6 +2,8 @@
 
 namespace Songbird\NestablePageBundle\Repository;
 
+use Songbird\NestablePageBundle\Entity\Page;
+
 /**
  * PageMetaRepository
  *
