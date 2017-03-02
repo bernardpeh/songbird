@@ -6,7 +6,7 @@ parameters:
     database_user: root
     database_password: root
     mailer_transport: smtp
-    mailer_host: 172.25.0.6:1025
+    mailer_host: '172.25.0.6:1025'
     mailer_user: null
     mailer_password: null
     secret: ThisTokenIsNotSoSecretChangeIt

@@ -1,5 +1,5 @@
-songbird_nestable_page:
-    resource: "@SongbirdNestablePageBundle/Controller/"
+nestable_page:
+    resource: "@PageTestBundle/Controller/"
     type:     annotation
     prefix:   /
 

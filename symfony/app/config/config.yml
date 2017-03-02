@@ -66,6 +66,9 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+        resolve_target_entities:
+            Bpeh\NestablePageBundle\Model\PageBase: Bpeh\NestablePageBundle\PageTestBundle\Entity\Page
+            Bpeh\NestablePageBundle\Model\PageMetaBase: Bpeh\NestablePageBundle\PageTestBundle\Entity\PageMeta
 
 # Swiftmailer Configuration
 swiftmailer:

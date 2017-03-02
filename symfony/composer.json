@@ -16,6 +16,12 @@
             "Tests\\": "tests/"
         }
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/bernardpeh/NestablePageBundle"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "symfony/symfony": "3.2.*",
@@ -31,7 +37,8 @@
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "doctrine/doctrine-migrations-bundle": "^1.0",
         "javiereguiluz/easyadmin-bundle": "^1.16.5",
-        "vich/uploader-bundle": "^1.4"
+        "vich/uploader-bundle": "^1.4",
+        "bpeh/nestable-page-bundle": ">0.1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
