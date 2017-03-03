@@ -23,7 +23,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(),
             new Bpeh\NestablePageBundle\BpehNestablePageBundle(),
-            new Bpeh\NestablePageBundle\PageTestBundle\PageTestBundle(),
+            new AppBundle\Page()
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -67,8 +67,8 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
         resolve_target_entities:
-            Bpeh\NestablePageBundle\Model\PageBase: Bpeh\NestablePageBundle\PageTestBundle\Entity\Page
-            Bpeh\NestablePageBundle\Model\PageMetaBase: Bpeh\NestablePageBundle\PageTestBundle\Entity\PageMeta
+            Bpeh\NestablePageBundle\Model\PageBase: AppBundle\Entity\Page
+            Bpeh\NestablePageBundle\Model\PageMetaBase: AppBundle\Entity\PageMeta
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -93,6 +93,22 @@ doctrine_migrations:
     namespace: AppBundle\DoctrineMigrations
     table_name: migration_versions
     name: AppBundle Migrations
+
+# Nestable Page Configuration
+bpeh_nestable_page:
+    page_entity: AppBundle\Entity\Page
+    pagemeta_entity: AppBundle\Entity\PageMeta
+    page_form_type: AppBundle\Form\PageType
+    pagemeta_form_type: AppBundle\Form\PageMetaType
+    # Customise the template if you want.
+    # page_view_list: YourBundle:list.html.twig
+    # page_view_new: YourBundle:new.html.twig
+    # page_view_edit: YourBundle:edit.html.twig
+    # page_view_show: YourBundle:show.html.twig
+    # pagemeta_view_index: YourBundle:index.html.twig
+    # pagemeta_view_new: YourBundle:new.html.twig
+    # pagemeta_view_edit: YourBundle:edit.html.twig
+    # pagemeta_view_show: YourBundle:show.html.twig
 
 # Vich Configuration
 vich_uploader:

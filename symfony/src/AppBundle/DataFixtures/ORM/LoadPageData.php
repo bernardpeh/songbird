@@ -1,17 +1,17 @@
 <?php
-
-namespace Songbird\NestablePageBundle\DataFixtures\ORM;
+namespace AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Songbird\NestablePageBundle\Entity\Page;
-use Songbird\NestablePageBundle\Entity\PageMeta;
+use AppBundle\Entity\Page;
+use AppBundle\Entity\PageMeta;
 
-class LoadPageData extends AbstractFixture implements ContainerAwareInterface
+class LoadPageData extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
 {
-
+    
     /**
      * @var ContainerInterface
      */
@@ -44,7 +44,7 @@ class LoadPageData extends AbstractFixture implements ContainerAwareInterface
         $homemetaEN->setMenuTitle('Home');
         $homemetaEN->setPageTitle('Welcome to SongBird CMS Demo');
         $homemetaEN->setShortDescription('Welcome to SongBird CMS Demo');
-        $homemetaEN->setContent('<p>SongBird is a simple CMS built with popular bundles like FOSUserBundle and SonataAdminBundle.
+        $homemetaEN->setContent('<p>SongBird is a simple CMS built with popular bundles like FOSUserBundle and EasyAdminBundle.
             The CMS is meant to showcase Rapid Application Development with Symfony.</p>');
         $manager->persist($homemetaEN);
 
@@ -54,7 +54,7 @@ class LoadPageData extends AbstractFixture implements ContainerAwareInterface
         $homemetaFR->setPageTitle('Bienvenue a SongBird CMS Démo');
         $homemetaFR->setShortDescription('Bienvenue a SongBird CMS Démo');
         $homemetaFR->setLocale('fr');
-        $homemetaFR->setContent('<p>SongBird est un simple CMS construit avec des faisceaux populaires comme FOSUserBundle et SonataAdminBundle.
+        $homemetaFR->setContent('<p>SongBird est un simple CMS construit avec des faisceaux populaires comme FOSUserBundle et EasyAdminBundle.
             Le CMS est destinée à mettre en valeur Rapid Application Development avec Symfony .</p>');
         $manager->persist($homemetaFR);
 
@@ -75,7 +75,6 @@ class LoadPageData extends AbstractFixture implements ContainerAwareInterface
         <li>User Management System – For administrators to manage the users of the site.</li>
         <li>Multi-lingual Capability – No CMS is complete without this.</li>
         <li>Page Management System – For managing the front-end pages of the site.</li>
-        <li>Media Management System – For administrators and users to manage files and images.</li>
         <li>Frontend – The frontend of the website.</li>
         </ul>');
         $manager->persist($aboutmetaEN);
@@ -92,7 +91,6 @@ class LoadPageData extends AbstractFixture implements ContainerAwareInterface
         <li>Système de gestion de l\'utilisateur - Pour les administrateurs de gérer les utilisateurs du site.</li>
         <li>Capacité multilingue - Pas de CMS est complète sans cela.</li>
         <li>Système de Management de la page - Pour gérer les pages du site frontaux.</li>
-        <li>Système de Gestion des médias - Pour les administrateurs et les utilisateurs de gérer des fichiers et des images.</li>
         <li>Frontend - L\'interface du site.</li>
         </ul>');
         $manager->persist($aboutmetaFR);
@@ -110,9 +108,9 @@ class LoadPageData extends AbstractFixture implements ContainerAwareInterface
         $whymetaEN->setMenuTitle('Why Songbird');
         $whymetaEN->setPageTitle('Why Songbird?');
         $whymetaEN->setShortDescription('Why Another CMS?');
-        $whymetaEN->setContent('<p>Learning a modern day framework is not an easy task. Songbird CMS does not aim to replace any existing CMS out there.
-        To put it simply, it is a play ground for people who wants to learn Symfony by building a CMS from scratch.
-        Creating a semi-complex application like a CMS will give the coder insights in building bigger
+        $whymetaEN->setContent('<p>Learning a modern day framework is not an easy task. Songbird CMS does not aim to replace any existing CMS out there. 
+        To put it simply, it is a play ground for people who wants to learn Symfony by building a CMS from scratch. 
+        Creating a semi-complex application like a CMS will give the coder insights in building bigger 
         things with a RAD framework like Symfony.</p>');
         $manager->persist($whymetaEN);
 
@@ -185,4 +183,12 @@ class LoadPageData extends AbstractFixture implements ContainerAwareInterface
         $manager->flush();
     }
 
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getOrder()
+	{
+		// load this second
+		return 2;
+	}
 }
