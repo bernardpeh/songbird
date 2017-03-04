@@ -1,0 +1,50 @@
+easy_admin:
+    entities:
+        Page:
+            class: AppBundle\Entity\Page
+            label: admin.link.page_management
+            # for new page
+            new:
+                fields:
+                  - slug
+                  - isPublished
+                  - sequence
+                  - parent
+            edit:
+                fields:
+                  - slug
+                  - isPublished
+                  - sequence
+                  - parent
+                  - pageMetas
+            show:
+                fields:
+                  - id
+                  - slug
+                  - isPublished
+                  - sequence
+                  - parent
+                  - modified
+                  - created
+                  - pageMetas
+            list:
+                actions: ['show', 'edit', 'delete']
+                fields:
+                  - id
+                  - slug
+                  - isPublished
+                  - sequence
+                  - parent
+                  - modified
+        PageMeta:
+            class: AppBundle\Entity\PageMeta
+            form:
+              fields:
+                - page_title
+                - menu_title
+                - { property: 'locale', type: 'AppBundle\Form\LocaleType' }
+                - { type: 'divider' }
+                - { property: 'featuredImageFile', type: 'vich_image' }
+                - { property: 'short_description', type: 'ckeditor' }
+                - { property: 'content', type: 'ckeditor' }
+                - page

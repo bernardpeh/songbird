@@ -1,6 +1,10 @@
 easy_admin:
-  design:
-    brand_color: '#5493ca'
-    assets:
-      css:
-        - /bundles/app/css/style.css
+    design:
+        brand_color: '#5493ca'
+        assets:
+            css:
+                - /bundles/app/css/style.css
+        menu:
+            - { entity: 'User', icon: 'user' }
+            - { entity: 'Page', icon: 'file' }
+            - { entity: 'UserLog', icon: 'database' }

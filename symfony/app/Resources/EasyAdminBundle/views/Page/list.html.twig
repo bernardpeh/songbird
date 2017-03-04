@@ -1,0 +1,77 @@
+{% extends '@EasyAdmin/default/list.html.twig' %}
+
+{% block head_stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/bpehnestablepage/css/styles.css ') }}">
+{% endblock %}
+
+{% block head_javascript %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/bpehnestablepage/js/jquery.nestable.js') }}"></script>
+    <script>
+        $(function() {
+
+            var before = null, after = null;
+
+            $('.dd').nestable({
+                afterInit: function ( event ) { }
+            });
+
+            $('.dd').nestable('collapseAll');
+            before = JSON.stringify($('.dd').nestable('serialize'));
+            $('.dd').on('dragEnd', function(event, item, source, destination, position) {
+
+                id = item.attr('data-id');
+                parentId = item.closest('li').parent().closest('li').attr('data-id');
+
+                // if parent id is null of if parent id and id is the same, it is the top level.
+                parentId = (parentId == id || typeof(parentId)  === "undefined") ?  '' : parentId;
+
+                after = JSON.stringify($('.dd').nestable('serialize'));
+
+                token = '{{ csrf_token("bpeh_page_reorder") }}';
+
+                if (before != after) {
+                    $.ajax({
+                        type: "POST",
+                        url: "{{ path('bpeh_page_reorder') }}",
+                        data: { id: id, parentId: parentId, position: position, csrf: token },
+                        success: function (data, dataType) {
+                            if (data.success) {
+                                $('.alert').addClass('alert-success');
+                            }
+                            else {
+                                $('.alert').addClass('alert-danger');
+                            }
+                            $('.alert').html(data.message);
+                            $('.alert').fadeTo( 0 , 1, function() {});
+                            $('.alert').fadeTo( 4000 , 0, function() {});
+                        },
+
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            console.log(XMLHttpRequest);
+                        }
+                    });
+                    before = after;
+                }
+            });
+        });
+    </script>
+{% endblock %}
+
+
+{% block main %}
+    <div class="alert alert-dismissable">
+        {{ 'flash_reorder_instructions' | trans({}, 'BpehNestablePageBundle') }}
+    </div>
+
+    <button type="button" onclick="$('.dd').nestable('expandAll')">{{ 'expand_all'|trans({}, 'BpehNestablePageBundle') }}</button>
+    <button type="button" onclick="$('.dd').nestable('collapseAll')">{{ 'collapse_all'|trans({}, 'BpehNestablePageBundle') }}</button>
+    <button onclick=window.location="{{ path('easyadmin') }}?entity=Page&action=new">{{ 'new_page'|trans({}, 'BpehNestablePageBundle') }}</button>
+    <button onclick=window.location="{{ path('easyadmin') }}?entity=PageMeta&action=new">{{ 'new_pagemeta'|trans({}, 'BpehNestablePageBundle') }}</button>
+    <div id="nestable" class="dd">
+        <ol class="dd-list">
+            {% include "@EasyAdmin/Page/tree.html.twig" with { 'tree':tree } %}
+        </ol>
+    </div>
+{% endblock main %}

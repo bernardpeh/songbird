@@ -1,13 +1,22 @@
 services:
+
     app.subscriber:
-            class: AppBundle\EventListener\AppSubscriber
-            arguments:
-                - "@service_container"
-            tags:
-                - { name: kernel.event_subscriber }
+        class: AppBundle\EventListener\AppSubscriber
+        arguments:
+            - "@service_container"
+        tags:
+            - { name: kernel.event_subscriber }
+
     app.locale.listener:
         class: AppBundle\EventListener\LocaleListener
         arguments:
           - "%kernel.default_locale%"
         tags:
           - { name: kernel.event_listener, event: kernel.request, priority: 17 }
+
+    app.form.type.locale:
+        class: AppBundle\Form\LocaleType
+        arguments:
+            - "%supported_lang%"
+        tags:
+            - { name: form.type }

@@ -12,6 +12,7 @@ parameters:
     supported_lang: [ 'en', 'fr']
     admin_path: admin
     app.profile_image.path: /uploads/profiles
+    app.featured_image.path: /uploads/featured_images
 
 framework:
     #esi:             ~
@@ -118,4 +119,8 @@ vich_uploader:
             uri_prefix: '%app.profile_image.path%'
             upload_destination: '%kernel.root_dir%/../web/uploads/profiles'
             # this will allow all uploaded filenames to be unique
+            namer: vich_uploader.namer_uniqid
+        featured_image:
+            uri_prefix: '%app.featured_image.path%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/featured_images'
             namer: vich_uploader.namer_uniqid

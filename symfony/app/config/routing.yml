@@ -1,6 +1,16 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+admin:
+  resource: "@AppBundle/Controller/AdminController.php"
+  type:     annotation
+
+locale:
+  resource: "@AppBundle/Controller/LocaleController.php"
+  type:     annotation
+
+bpeh_page_reorder:
+  path: /admin/reorder
+  defaults:
+    _controller: BpehNestablePageBundle:Page:reorder
+
 # FOS user bundle default routing
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
