@@ -23,3 +23,7 @@ easy_admin_bundle:
     resource: "@AppBundle/Controller/AdminController.php"
     type:     annotation
     prefix:   /%admin_path%
+
+frontend:
+  resource: "@AppBundle/Controller/FrontendController.php"
+  type:     annotation
