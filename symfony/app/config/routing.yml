@@ -19,11 +19,11 @@ fos_user_resetting:
     resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
     prefix: /resetting
 
+frontend:
+  resource: "@AppBundle/Controller/FrontendController.php"
+  type:     annotation
+  
 easy_admin_bundle:
     resource: "@AppBundle/Controller/AdminController.php"
     type:     annotation
     prefix:   /%admin_path%
-
-frontend:
-  resource: "@AppBundle/Controller/FrontendController.php"
-  type:     annotation

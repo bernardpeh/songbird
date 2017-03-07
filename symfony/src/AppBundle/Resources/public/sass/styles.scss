@@ -1,0 +1,112 @@
+// variables
+$black: #000;
+$white: #fff;
+$radius: 6px;
+$spacing: 20px;
+$font_big: 16px;
+$featured_image_width: 200px;
+
+body {
+  color: $black;
+  background: $white !important;
+  padding-top: $spacing;
+}
+.vspace {
+  height: $spacing;
+}
+.skin-black {
+  .logo {
+    background-color: $black;
+  }
+  .left-side {
+    background-color: $black;
+  }
+}
+.sidebar {
+  ul {
+    padding-top: $spacing;
+  }
+  li {
+    padding-top: $spacing;
+  }
+}
+.admin_top_left {
+  padding-top: $spacing 0 0 $spacing;
+}
+#top_menu {
+  padding: $spacing 0 $spacing;
+
+  #page_logo {
+    padding: 0 $spacing;
+    margin: -$spacing/2 0;
+  }
+
+  #login_link {
+    float:right;
+  }
+
+  #frontend_lang_toggle {
+    float: right;
+    padding: $spacing/2 $spacing;
+  }
+}
+.sm-clean {
+  border-radius: $radius;
+
+}
+// admin area
+#page_logo img {
+  display: inline;
+  max-height: 100%;
+  max-width: 50%;
+}
+#page_menu li {
+  line-height: $spacing;
+  padding-top: $spacing;
+}
+.navbar-brand img {
+  margin-top: -8px;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  .form-signin-heading {
+    margin-bottom: $spacing;
+  }
+  .checkbox {
+    margin-bottom: $spacing;
+    font-weight: normal;
+  }
+  .form-control {
+    position: relative;
+    height: auto;
+    box-sizing: border-box;
+    padding: $spacing;
+    font-size: $font_big;
+    &:focus {
+      z-index: 2;
+    }
+  }
+  input[type="email"] {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  input[type="password"] {
+    margin-bottom: $spacing;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+.form-control {
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+}
+
+// frontend
+.featured_image {
+  margin: auto;
+  display: block;
+  width: $featured_image_width;
+}

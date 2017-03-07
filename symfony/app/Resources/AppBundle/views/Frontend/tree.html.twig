@@ -1,0 +1,12 @@
+{% for v in tree %}
+
+    <li>
+        <a href="{{ urlPrefix }}/{{ v.getSlug() }}">{{ getMenuLocaleTitle(v.getSlug()) }}</a>
+        {% set children = v.getChildren()|length %}
+        {% if children > 0 %}
+            <ul>
+                {% include "AppBundle:Frontend:tree.html.twig" with { 'tree':v.getChildren() } %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}

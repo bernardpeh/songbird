@@ -10,14 +10,71 @@
     {% endblock %}
 </head>
 <body>
+
+{% set urlPrefix = (app.environment == 'dev') ? '/app_dev.php' : '' %}
+
 {% block body %}
 
-    {% block content %}{% endblock %}
+    <div class="container">
+        {% block topnav %}
+            <ul id="top_menu" class="sm sm-clean">
+                <li id="page_logo">
+                    <a href="{{ urlPrefix }}" alt="songbird">
+                        <img src="{{ asset('bundles/app/images/logo.png') }}" class="center-block img-responsive" alt="Songbird" />
+                    </a>
+                </li>
+                {% if tree is defined %}
+                    {% include "AppBundle:Frontend:tree.html.twig" with { 'tree':tree } %}
+                {% endif %}
+                <li id="frontend_lang_toggle">
+                    <select id="lang" name="lang">
+                        {% for lang in supported_lang %}
+                            <option value="{{ lang }}">{{ lang }}</option>
+                        {% endfor %}
+                    </select>
+                </li>
+                <li id="login_link">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <a href="{{ path('fos_user_security_logout') }}">
+                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    {% else %}
+                        <a href="{{ path('fos_user_security_login') }}">
+                            {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    {% endif %}
+                </li>
+            </ul>
+
+        {% endblock %}
+
+        <div class="clearfix vspace"></div>
+
+        {% block content %}{% endblock %}
+
+        {% block footer %}
+            <hr />
+            <footer>
+                <p class="text-center">© Songbird {{ "now" | date("Y")}}</p>
+            </footer>
+        {% endblock %}
+    </div>
 
 {% endblock %}
 
 {% block script %}
     <script src="{{ asset('minified/js/javascript.js') }}"></script>
+    <script>
+      $(function() {
+        $('#top_menu').smartmenus();
+        // select the box based on locale
+        $('#lang').val('{{ app.request.getLocale() }}');
+        // redirect user if user change locale
+        $('#lang').change(function() {
+          window.location='{{ urlPrefix }}'+$(this).val()+'/locale';
+        });
+      });
+    </script>
 {% endblock %}
 
 </body>

@@ -20,3 +20,11 @@ services:
             - "%supported_lang%"
         tags:
             - { name: form.type }
+
+    menu_locale_title.twig_extension:
+      class: AppBundle\Twig\Extension\MenuLocaleTitle
+      arguments:
+        - "@doctrine.orm.entity_manager"
+        - "@request_stack"
+      tags:
+        - { name: twig.extension }

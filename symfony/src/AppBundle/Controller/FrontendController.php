@@ -5,12 +5,15 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class FrontendController extends Controller
 {
     /**
      * @Route("/{slug}", name="app_frontend_index", requirements = {"slug" = "^((|home)$)"})
      * @Method("GET")
+     * @Template()
      * @param Request $request
      *
      * @return array
@@ -30,6 +33,7 @@ class FrontendController extends Controller
 
     /**
      * @Route("/{slug}", name="app_frontend_view")
+     * @Template()
      * @Method("GET")
      */
     public function pageAction(Request $request)
