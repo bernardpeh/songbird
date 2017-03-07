@@ -3,7 +3,8 @@ easy_admin:
         UserLog:
             class: AppBundle\Entity\UserLog
             label: admin.link.user_log
+            role: ROLE_ADMIN
             show:
-                  actions: ['list', '-edit', '-delete']
+                actions: ['list', '-edit', '-delete']
             list:
                 actions: ['show', '-edit', '-delete']

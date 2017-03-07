@@ -83,18 +83,21 @@ class AppSubscriber implements EventSubscriberInterface
     public function checkUserRights(GenericEvent $event)
     {
         // if super admin, allow all
-        if ($this->container->get('security.authorization_checker')->isGranted('ROLE_SUPER_ADMIN')) {
+        $authorization = $this->container->get('security.authorization_checker');
+        $request = $this->container->get('request_stack')->getCurrentRequest()->query;
+
+        if ($authorization->isGranted('ROLE_ADMIN')) {
             return;
         }
 
-        $entity = $this->container->get('request_stack')->getCurrentRequest()->query->get('entity');
-        $action = $this->container->get('request_stack')->getCurrentRequest()->query->get('action');
-        $user_id = $this->container->get('request_stack')->getCurrentRequest()->query->get('id');
+        $entity = $request->get('entity');
+        $action = $request->get('action');
+        $user_id = $request->get('id');
 
-        // if user management, only allow ownself to edit and see ownself
+        // allow user to edit their own profile irregardless of permissions
         if ($entity == 'User') {
             // if edit and show
-            if ($action == 'edit' || $action == 'show') {
+            if ($action == 'edit') {
                 // check user is himself
                 if ($user_id == $this->container->get('security.token_storage')->getToken()->getUser()->getId()) {
                     return;
@@ -102,8 +105,14 @@ class AppSubscriber implements EventSubscriberInterface
             }
         }
 
-        // throw exception in all cases
-        throw new AccessDeniedException();
+        $config = $this->container->get('easyadmin.config.manager')->getBackendConfig();
+
+        // check for permission for each action
+        foreach ($config['entities'] as $k => $v) {
+            if ($entity == $k && !$authorization->isGranted($v[$action]['role'])) {
+                throw new AccessDeniedException();
+            }
+        }
     }
 
     /**

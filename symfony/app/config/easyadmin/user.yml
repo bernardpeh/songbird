@@ -3,6 +3,7 @@ easy_admin:
         User:
             class: AppBundle\Entity\User
             label: admin.link.user_management
+            role: ROLE_ADMIN
             # for new user
             new:
                 fields:
@@ -15,7 +16,6 @@ easy_admin:
                   - roles
                   - enabled
             edit:
-                  actions: ['-delete', '-list']
                   fields:
                     - username
                     - firstname
@@ -26,7 +26,6 @@ easy_admin:
                     - roles
                     - enabled
             show:
-                  actions: ['edit', '-delete', '-list']
                   fields:
                     - id
                     - { property: 'image', type: 'image', base_path: '%app.profile_image.path%'}

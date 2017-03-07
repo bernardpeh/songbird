@@ -22,9 +22,19 @@ services:
             - { name: form.type }
 
     menu_locale_title.twig_extension:
-      class: AppBundle\Twig\Extension\MenuLocaleTitle
-      arguments:
-        - "@doctrine.orm.entity_manager"
-        - "@request_stack"
-      tags:
-        - { name: twig.extension }
+        class: AppBundle\Twig\Extension\MenuLocaleTitle
+        arguments:
+          - "@doctrine.orm.entity_manager"
+          - "@request_stack"
+        tags:
+          - { name: twig.extension }
+
+    app.twig.extension:
+        class: AppBundle\Twig\Extension\EasyAdminTwigExtension
+        arguments:
+            - "@easyadmin.config.manager"
+            - "@property_accessor"
+            - "%kernel.debug%"
+            - "@security.authorization_checker"
+        tags:
+          - { name: twig.extension }
