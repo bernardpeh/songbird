@@ -93,7 +93,7 @@
                                     </i>
                                     <i class="hidden-xs fa fa-user">
                                         {% if app.user %}
-                                            <a href="{{ path('easyadmin') }}/?entity=User&action=show&id={{ app.user.id }}">{{ app.user.username|default('user.unnamed'|trans(domain = 'EasyAdminBundle')) }}</a>
+                                            <a href="{{ path('easyadmin') }}/?entity=User&action=edit&id={{ app.user.id }}">{{ app.user.username|default('user.unnamed'|trans(domain = 'EasyAdminBundle')) }}</a>
                                         {% else %}
                                             {{ 'user.anonymous'|trans(domain = 'EasyAdminBundle') }}
                                         {% endif %}
