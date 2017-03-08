@@ -52,11 +52,9 @@ class EasyAdminTwigExtension extends \JavierEguiluz\Bundle\EasyAdminBundle\Twig\
             }
         }
         // hide delete button if easyadmin says so
-        $actions = ['delete'];
-        foreach ($actions as $action) {
-            if (isset($entityConfig[$action]['role']) && !$this->checker->isGranted($entityConfig[$action]['role'])) {
-                array_push($excludedActions, 'delete');
-            }
+        $action = 'delete';
+        if (isset($entityConfig[$action]['role']) && !$this->checker->isGranted($entityConfig[$action]['role'])) {
+            array_push($excludedActions, 'delete');
         }
 
         return array_filter($viewActions, function ($action) use ($excludedActions, $disabledActions) {

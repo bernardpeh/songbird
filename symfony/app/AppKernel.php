@@ -15,16 +15,16 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new AppBundle\AppBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
             // init my fosuser
             new FOS\UserBundle\FOSUserBundle(),
-            new AppBundle\User(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(),
             new Bpeh\NestablePageBundle\BpehNestablePageBundle(),
-            new AppBundle\Page(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new AppBundle\AppBundle(),
+            new AppBundle\User(),
+            new AppBundle\Page(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

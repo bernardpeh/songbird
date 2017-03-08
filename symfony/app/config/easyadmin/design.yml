@@ -6,6 +6,6 @@ easy_admin:
                 - /bundles/app/css/style.css
         menu:
           - { label: 'Dashboard', route: 'dashboard', default: true }
-          - { entity: 'User', icon: 'user', role: ROLE_ADMIN }
+          - { entity: 'User', icon: 'user', role: ROLE_USER }
           - { entity: 'Page', icon: 'file', role: ROLE_USER }
           - { entity: 'UserLog', icon: 'database', role: ROLE_ADMIN }
