@@ -3,7 +3,7 @@ easy_admin:
         Page:
             class: AppBundle\Entity\Page
             label: admin.link.page_management
-            role: ROLE_USER
+            role: ROLE_ADMIN
             # for new page
             new:
                 fields:
@@ -37,11 +37,9 @@ easy_admin:
                   - sequence
                   - parent
                   - modified
-            delete:
-                role: ROLE_ADMIN
         PageMeta:
             class: AppBundle\Entity\PageMeta
-            role: ROLE_USER
+            role: ROLE_ADMIN
             form:
               fields:
                 - page_title

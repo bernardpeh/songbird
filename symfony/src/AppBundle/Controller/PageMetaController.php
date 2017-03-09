@@ -13,5 +13,4 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
  */
 class PageMetaController extends BaseController
 {
-
 }

@@ -10,6 +10,4 @@ use Bpeh\NestablePageBundle\Repository\PageMetaRepository as BasePageMetaReposit
  */
 class PageMetaRepository extends BasePageMetaRepository
 {
-
 }
-

@@ -39,10 +39,10 @@ class IWantToManagePagesCest
     public function listPages(AcceptanceTester $I)
     {
         // there should be 3 parent menus
-        $I->canSeeNumberOfElements('//div[@id="nestable"]/ol/li',3);
+        $I->canSeeNumberOfElements('//div[@id="nestable"]/ol/li', 3);
         // there should be 2 entries under the about menu
         $I->click('Expand All');
-        $I->canSeeNumberOfElements('//li[@data-id="2"]/ol/li',2);
+        $I->canSeeNumberOfElements('//li[@data-id="2"]/ol/li', 2);
     }
 
     /**
@@ -71,16 +71,16 @@ class IWantToManagePagesCest
     public function reorderHomePage(AcceptanceTester $I)
     {
         $I->click('Expand All');
-        $I->dragAndDrop('//li[@data-id="4"]/div','//li[@data-id="1"]/div');
+        $I->dragAndDrop('//li[@data-id="4"]/div', '//li[@data-id="1"]/div');
         $I->waitForText('menu has been reordered successfully');
         // we should now have 4 main li
-        $I->canSeeNumberOfElements('//div[@id="nestable"]/ol/li',4);
+        $I->canSeeNumberOfElements('//div[@id="nestable"]/ol/li', 4);
         // refresh page and reorder it back to original state
         $I->click('Page Management');
         $I->click('Expand All');
-        $I->dragAndDrop('//li[@data-id="4"]/div','//li[@data-id="3"]/div');
+        $I->dragAndDrop('//li[@data-id="4"]/div', '//li[@data-id="3"]/div');
         $I->waitForText('menu has been reordered successfully');
-        $I->canSeeNumberOfElements('//div[@id="nestable"]/ol/li',3);
+        $I->canSeeNumberOfElements('//div[@id="nestable"]/ol/li', 3);
     }
 
     /**
@@ -163,7 +163,6 @@ class IWantToManagePagesCest
         // this page doesn't exists in page menu
         $I->amOnPage('/admin/?entity=PageMeta&action=list');
         $I->cantSee('Contact Us');
-
     }
 
     /**

@@ -89,15 +89,14 @@ class AppSubscriber implements EventSubscriberInterface
         if ($authorization->isGranted('ROLE_ADMIN')) {
             return;
         }
-
         $entity = $request->get('entity');
         $action = $request->get('action');
         $user_id = $request->get('id');
 
-        // allow user to edit their own profile irregardless of permissions
+        // allow user to see and edit their own profile irregardless of permissions
         if ($entity == 'User') {
             // if edit and show
-            if ($action == 'edit') {
+            if ($action == 'edit' || $action == 'show') {
                 // check user is himself
                 if ($user_id == $this->container->get('security.token_storage')->getToken()->getUser()->getId()) {
                     return;

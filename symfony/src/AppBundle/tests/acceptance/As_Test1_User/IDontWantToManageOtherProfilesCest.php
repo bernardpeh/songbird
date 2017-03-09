@@ -29,21 +29,25 @@ class IShouldNotBeAbleToManageOtherProfilesCest
     /**
      * GIVEN List all profiles
      * WHEN I go to "/admin/?action=list&entity=User" url
-     * THEN I should get an "access denied" error.
+     * THEN I should see a list of all users in a table with image fields and not see show, edit and delete button
      *
      * Scenario 10.5.1
      * @before login
      */
     public function listAllProfiles(AcceptanceTester $I)
     {
-        $I->amOnPage('/admin/?action=list&entity=User');
-        $I->canSee('403');
+        $I->click('User Management');
+        $I->canSeeNumberOfElements('//table/tbody/tr', 4);
+        $I->seeNumberOfElements('//td[@data-label="Image"]', 4);
+        $I->cantSee('Show');
+        $I->cantSee('Edit');
+        $I->cantSee('Delete');
     }
 
     /**
      * GIVEN Show test2 profile
      * WHEN I go to "/admin/?action=show&entity=User&id=3"
-     * THEN I should get an "access denied" error.
+     * THEN I should see "test2 Firstname"
      *
      * Scenario 10.5.2
      * @before login

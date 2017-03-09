@@ -7,7 +7,8 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class ConfigPass implements CompilerPassInterface
 {
-    public function process( ContainerBuilder $container ) {
+    public function process(ContainerBuilder $container)
+    {
 
         // $container->getParameterBag();
         // $container->getServiceIds();
@@ -15,7 +16,7 @@ class ConfigPass implements CompilerPassInterface
         $config = $container->getParameter('easyadmin.config');
 
         // use menu to use IS_AUTHENTICATED_FULLY role by default if not set
-        foreach($config['design']['menu'] as $k => $v) {
+        foreach ($config['design']['menu'] as $k => $v) {
             if (!isset($v['role'])) {
                 $config['design']['menu'][$k]['role'] = 'IS_AUTHENTICATED_FULLY';
             }
@@ -39,6 +40,5 @@ class ConfigPass implements CompilerPassInterface
         }
 
         $container->setParameter('easyadmin.config', $config);
-
     }
 }

@@ -28,7 +28,7 @@ easy_admin:
                 - roles
                 - enabled
             show:
-                role: ROLE_USER
+                role: ROLE_ADMIN
                 fields:
                 - id
                 - { property: 'image', type: 'image', base_path: '%app.profile_image.path%'}

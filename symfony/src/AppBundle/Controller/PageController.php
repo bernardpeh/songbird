@@ -11,6 +11,4 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
  */
 class PageController extends BaseController
 {
-
 }
-

@@ -142,11 +142,9 @@ class AdminController extends BaseAdminController
      */
     public function prePersistPageMetaEntity(PageMeta $pageMeta)
     {
-
-        if ( $this->em->getRepository('AppBundle\Entity\PageMeta')->findPageMetaByLocale( $pageMeta->getPage(), $pageMeta->getLocale() ) ) {
-            throw new \RuntimeException($this->get('translator')->trans('one_locale_per_pagemeta_only', array(), 'BpehNestablePageBundle') );
+        if ($this->em->getRepository('AppBundle\Entity\PageMeta')->findPageMetaByLocale($pageMeta->getPage(), $pageMeta->getLocale())) {
+            throw new \RuntimeException($this->get('translator')->trans('one_locale_per_pagemeta_only', array(), 'BpehNestablePageBundle'));
         }
-
     }
 
     /**
@@ -192,9 +190,8 @@ class AdminController extends BaseAdminController
             // if page and local is the same, dont need to check locale count
             if ($origLocale == $entity->getLocale() && $origId == $entity->getPage()->getId()) {
                 // all good
-            }
-            elseif ( $this->em->getRepository('AppBundle\Entity\PageMeta')->findPageMetaByLocale( $pageMeta->getPage(), $pageMeta->getLocale(), true ) ) {
-                throw new \RuntimeException($this->get('translator')->trans('one_locale_per_pagemeta_only', array(), 'BpehNestablePageBundle') );
+            } elseif ($this->em->getRepository('AppBundle\Entity\PageMeta')->findPageMetaByLocale($pageMeta->getPage(), $pageMeta->getLocale(), true)) {
+                throw new \RuntimeException($this->get('translator')->trans('one_locale_per_pagemeta_only', array(), 'BpehNestablePageBundle'));
             }
 
             $this->em->flush();

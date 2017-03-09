@@ -15,7 +15,7 @@ class PageMetaType extends BasePageMetaType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        parent::buildForm($builder,$options);
+        parent::buildForm($builder, $options);
     }
 
     /**

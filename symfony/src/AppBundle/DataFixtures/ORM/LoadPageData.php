@@ -30,7 +30,6 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface, C
      */
     public function load(ObjectManager $manager)
     {
-
         $homepage = new Page();
         $homepage->setSlug('home');
         $homepage->setIsPublished(1);
@@ -187,12 +186,12 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface, C
         $manager->flush();
     }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function getOrder()
-	{
-		// load this second
-		return 2;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function getOrder()
+    {
+        // load this second
+        return 2;
+    }
 }

@@ -28,5 +28,4 @@ class LocaleType extends AbstractType
     {
         return ChoiceType::class;
     }
-
 }

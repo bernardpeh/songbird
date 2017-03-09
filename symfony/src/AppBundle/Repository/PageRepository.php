@@ -10,5 +10,4 @@ use Bpeh\NestablePageBundle\Repository\PageRepository as BasePageRepository;
  */
 class PageRepository extends BasePageRepository
 {
-
 }

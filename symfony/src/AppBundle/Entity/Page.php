@@ -32,5 +32,4 @@ class Page extends PageBase
     {
         return $this->id;
     }
-
 }

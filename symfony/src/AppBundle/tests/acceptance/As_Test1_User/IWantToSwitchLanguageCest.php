@@ -39,11 +39,11 @@ class IWantToSwitchLanguageCest
         $I->canSee('Déconnexion');
         $I->click('test1');
         // now in show profile page
-        $I->waitForText('Éditer');
-        $I->canSee('Éditer');
+        $I->waitForText('Sauvegarder');
+        $I->canSee('Sauvegarder');
         // now switch back to english
         $I->selectOption('//select[@id="lang"]', 'en');
-        $I->waitForText('Edit');
-        $I->canSee('Edit');
+        $I->waitForText('Save changes');
+        $I->canSee('Save changes');
     }
 }

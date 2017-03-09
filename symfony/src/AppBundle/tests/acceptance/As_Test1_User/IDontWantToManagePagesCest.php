@@ -1,6 +1,7 @@
 <?php
 
 namespace As_Test1_User;
+
 use \AcceptanceTester;
 use \Common;
 
@@ -61,7 +62,8 @@ class IDontWantToManagePagesCest
      * Scenario 19.23
      * @before login
      */
-    public function editAboutUsPage(AcceptanceTester $I) {
+    public function editAboutUsPage(AcceptanceTester $I)
+    {
         $I->amOnPage('/admin/?entity=Page&action=edit&id=2');
         $I->canSee('403');
     }
@@ -71,10 +73,11 @@ class IDontWantToManagePagesCest
      * WHEN I go to list pagemeta url
      * THEN I should get a access denied message
      *
-     * Scenario 19.234
+     * Scenario 19.24
      * @before login
      */
-    public function listPageMeta(AcceptanceTester $I) {
+    public function listPageMeta(AcceptanceTester $I)
+    {
         $I->amOnPage('/admin/?entity=PageMeta&action=list');
         $I->canSee('403');
     }

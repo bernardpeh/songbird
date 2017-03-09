@@ -65,6 +65,5 @@ class AppExtension extends Extension implements PrependExtensionInterface
         $vich['mappings']['featured_image']['upload_destination'] = '%kernel.root_dir%/../web/uploads/featured_images';
         $vich['mappings']['featured_image']['namer'] = 'vich_uploader.namer_uniqid';
         $container->prependExtensionConfig('vich_uploader', $vich);
-
     }
 }

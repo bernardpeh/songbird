@@ -43,7 +43,7 @@ class IWantToLoginCest
     /**
      * GIVEN See my dashboard content
      * WHEN I login correctly
-     * THEN I should not see the text "User Management" and should see the text "Dear test1"
+     * THEN I should see the text "User Management" and should see the text "Dear test1"
      *
      * Scenario 10.1.2
      * @before login
@@ -52,7 +52,7 @@ class IWantToLoginCest
     {
         $I->canSeeInCurrentUrl('/admin/dashboard');
         $I->canSee('Dear test1');
-        $I->cantSee('User Management');
+        $I->canSee('User Management');
     }
 
     /**

@@ -55,9 +55,6 @@ class IWantToResetPasswordWithoutLoggingInCest
         $I->fillField('//input[@id="fos_user_resetting_form_plainPassword_first"]', '1111');
         $I->fillField('//input[@id="fos_user_resetting_form_plainPassword_second"]', '1111');
         $I->click('_submit');
-        // now at show page
-        $I->amOnPage('/admin/?action=show&entity=User&id=2');
-        $I->canSee('The password has been reset successfully');
 
         // now login with the new password
         $this->login($I, TEST1_USERNAME, '1111');
@@ -67,8 +64,6 @@ class IWantToResetPasswordWithoutLoggingInCest
         $I->fillField('//input[contains(@id, "_plainPassword_first")]', TEST1_USERNAME);
         $I->fillField('//input[contains(@id, "_plainPassword_second")]', TEST1_PASSWORD);
         $I->click('//button[@type="submit"]');
-        // i am on the show page
-        $I->canSeeInCurrentUrl('/admin/?action=show&entity=User&id=2');
 
         // i should be able to login with old password
         $this->login($I);
