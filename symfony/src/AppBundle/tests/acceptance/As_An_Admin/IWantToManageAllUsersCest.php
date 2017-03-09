@@ -84,11 +84,12 @@ class IWantToManageAllUsersCest
         $I->click('User Management');
         $I->canSee('lastname3 updated');
         // now revert username
-        $I->amOnPage('/admin/?action=edit&entity=User&id=4');
-        $I->fillField('//input[@value="lastname3 updated"]', 'test3 Lastname');
-        $I->click('//button[@type="submit"]');
-        $I->click('User Management');
-        $I->canSee('test3 Lastname');
+        // $I->amOnPage('/admin/?action=edit&entity=User&id=4');
+        // $I->fillField('//input[@value="lastname3 updated"]', 'test3 Lastname');
+        // $I->click('//button[@type="submit"]');
+        // $I->click('User Management');
+        // $I->canSee('test3 Lastname');
+        Common::resetDB();
     }
 
     /**
@@ -122,5 +123,6 @@ class IWantToManageAllUsersCest
         $I->click('//button[@id="modal-delete-button"]');
         // I can no longer see test4 user
         $I->cantSee('test4@songbird.app');
+        Common::resetDB();
     }
 }

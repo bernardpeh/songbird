@@ -76,11 +76,12 @@ class IWantToManagePagesCest
         // we should now have 4 main li
         $I->canSeeNumberOfElements('//div[@id="nestable"]/ol/li', 4);
         // refresh page and reorder it back to original state
-        $I->click('Page Management');
-        $I->click('Expand All');
-        $I->dragAndDrop('//li[@data-id="4"]/div', '//li[@data-id="3"]/div');
-        $I->waitForText('menu has been reordered successfully');
-        $I->canSeeNumberOfElements('//div[@id="nestable"]/ol/li', 3);
+        // $I->click('Page Management');
+        // $I->click('Expand All');
+        // $I->dragAndDrop('//li[@data-id="4"]/div', '//li[@data-id="3"]/div');
+        // $I->waitForText('menu has been reordered successfully');
+        // $I->canSeeNumberOfElements('//div[@id="nestable"]/ol/li', 3);
+        Common::resetDB();
     }
 
     /**
@@ -99,12 +100,13 @@ class IWantToManagePagesCest
         // back at page management page, i should see home1
         $I->click('Page Management');
         $I->canSee('home1');
-        $I->click('home1');
-        $I->fillField('//input[@name="page[slug]"]', 'home');
+        // $I->click('home1');
+        // $I->fillField('//input[@name="page[slug]"]', 'home');
         // update
-        $I->click('Save changes');
-        $I->click('Page Management');
-        $I->canSee('home');
+        // $I->click('Save changes');
+        // $I->click('Page Management');
+        // $I->canSee('home');
+        Common::resetDB();
     }
 
     /**
@@ -163,6 +165,7 @@ class IWantToManagePagesCest
         // this page doesn't exists in page menu
         $I->amOnPage('/admin/?entity=PageMeta&action=list');
         $I->cantSee('Contact Us');
+        Common::resetDB();
     }
 
     /**

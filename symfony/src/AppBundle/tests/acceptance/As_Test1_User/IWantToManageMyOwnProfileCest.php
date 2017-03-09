@@ -80,10 +80,11 @@ class IWantToManageMyOwnProfileCest
         $I->canSeeInCurrentUrl('/admin/?action=show&entity=User&id=2');
         $I->canSee('lastname1 updated');
         // now revert changes
-        $I->amOnPage('/admin/?action=edit&entity=User&id=2');
-        $I->fillField('//input[@value="lastname1 updated"]', 'test1 Lastname');
-        // update
-        $I->click('//button[@type="submit"]');
+        // $I->amOnPage('/admin/?action=edit&entity=User&id=2');
+        // $I->fillField('//input[@value="lastname1 updated"]', 'test1 Lastname');
+        // // update
+        // $I->click('//button[@type="submit"]');
+        Common::resetDB();
     }
 
     /**
@@ -107,12 +108,13 @@ class IWantToManageMyOwnProfileCest
         // i can login and at dashboard now
         $I->canSee('Dear test1');
         // reset everything back
-        $I->amOnPage('/admin/?action=edit&entity=User&id=2');
-        $I->fillField('//input[contains(@id, "_plainPassword_first")]', TEST1_PASSWORD);
-        $I->fillField('//input[contains(@id, "_plainPassword_second")]', TEST1_PASSWORD);
-        $I->click('//button[@type="submit"]');
-        // i am on the show page
-        $I->canSeeInCurrentUrl('/admin/?action=show&entity=User&id=2');
+        // $I->amOnPage('/admin/?action=edit&entity=User&id=2');
+        // $I->fillField('//input[contains(@id, "_plainPassword_first")]', TEST1_PASSWORD);
+        // $I->fillField('//input[contains(@id, "_plainPassword_second")]', TEST1_PASSWORD);
+        // $I->click('//button[@type="submit"]');
+        // // i am on the show page
+        // $I->canSeeInCurrentUrl('/admin/?action=show&entity=User&id=2');
+        Common::resetDB();
         // i should be able to login with the old password
         $this->login($I);
         $I->canSee('Dear test1');
@@ -188,5 +190,6 @@ class IWantToManageMyOwnProfileCest
         // can see new image
         $I->waitForElement('//img[contains(@src, "'.$imagePath.'")]');
         $I->canSeeFileFound($imagePath, '../../web/uploads/profiles');
+        Common::resetDB();
     }
 }

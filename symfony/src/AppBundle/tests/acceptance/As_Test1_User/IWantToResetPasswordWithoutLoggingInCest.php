@@ -60,10 +60,11 @@ class IWantToResetPasswordWithoutLoggingInCest
         $this->login($I, TEST1_USERNAME, '1111');
 
         // db has been changed. update it back
-        $I->amOnPage('/admin/?action=edit&entity=User&id=2');
-        $I->fillField('//input[contains(@id, "_plainPassword_first")]', TEST1_USERNAME);
-        $I->fillField('//input[contains(@id, "_plainPassword_second")]', TEST1_PASSWORD);
-        $I->click('//button[@type="submit"]');
+        // $I->amOnPage('/admin/?action=edit&entity=User&id=2');
+        // $I->fillField('//input[contains(@id, "_plainPassword_first")]', TEST1_USERNAME);
+        // $I->fillField('//input[contains(@id, "_plainPassword_second")]', TEST1_PASSWORD);
+        // $I->click('//button[@type="submit"]');
+        Common::resetDB();
 
         // i should be able to login with old password
         $this->login($I);
