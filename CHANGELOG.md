@@ -1,5 +1,7 @@
 # CHANGELOG
 
+* 9 mar 2017 - Finished the final chapter. Quite a lot of bug fixes to nestable page bundle. Used twig extensions to hid easyadmin actions more intelligently.
+
 * 23 feb 2017 - up to chapter 16. Used docker for blackfire instead.
 
 * 1 Feb 2017 - Up to chapter 11. Used docker to setup mailcatcher module instead.
