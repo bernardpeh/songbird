@@ -19,4 +19,13 @@ class Common
         $I->fillField('_password', $pass);
         $I->click('_submit');
     }
+
+    public static function resetDB()
+    {
+        exec('bin/console doctrine:database:drop --force');
+        exec('bin/console doctrine:database:create');
+        exec('bin/console doctrine:schema:create');
+        exec('bin/console doctrine:fixtures:load -n');
+    }
+
 }
